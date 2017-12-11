@@ -28,6 +28,7 @@ Base styles for theme workweb_base
 # Infinite scroll
 # Media
   ## Galleries
+  ## Videos
 --------------------------------------------------------------*/
 
 
@@ -589,12 +590,12 @@ ul.nav-menu a:hover {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  
+
 }
 
 #top-menu{
 	/*display:table;
-	width: 100%;*/	
+	width: 100%;*/
 }
 
 #top-menu .sub-menu{
@@ -615,8 +616,8 @@ ul.nav-menu a:hover {
 }
 
 #top-menu ul.sub-menu li:hover ul.sub-menu{
-	left: 95%;	
-	top: 0;	
+	left: 95%;
+	top: 0;
 }
 
 
@@ -624,12 +625,12 @@ ul.nav-menu a:hover {
 	float: none;
     display: table-cell;
     background-color:inherit;
-    vertical-align: top;	
+    vertical-align: top;
 	text-align: center;
 }
 
 #top-menu li .sub-menu li{
-	display:list-item;	
+	display:list-item;
 }
 
 
@@ -657,26 +658,26 @@ ul.nav-menu a:hover {
 		box-shadow: none;
 		background: #d7d7d7;
 	}
-	
+
 	.menu-toggle:before {
 	  content: "\2630";
 	  display: inline-block;
 	  margin-right: 5px;
 	}
-	
+
 	.menu-toggle:hover{
 		box-shadow: none;
 		background: #212121;
-		color: #ffffff;	
+		color: #ffffff;
 	}
-	
+
 	#top-menu li {
 		float: none;
 		display:list-item;
 		vertical-align: middle;
 		text-align: left;
 	}
-	
+
 	#top-menu .sub-menu {
 		position: relative;
 		border: none;
@@ -688,18 +689,18 @@ ul.nav-menu a:hover {
 		display: block;
 		background-color:#cccccc;
 	}
-	
+
 	#top-menu .sub-menu a{
 		padding-left: 1em;
 	}
 	#top-menu .sub-menu .sub-menu a{
-		padding-left: 2em;	
+		padding-left: 2em;
 	}
-	
+
 	#top-menu ul.sub-menu li:hover ul.sub-menu {
 		left: 0;
 		top: 0;
-	}	
+	}
 }
 
 /*** Small ***/
@@ -879,7 +880,7 @@ body {
 }
 
 #topbar-right{
-	text-align:right;	
+	text-align:right;
 }
 
 
@@ -890,7 +891,7 @@ body {
 .site-footer,
 .site-colophon {
     background-color: grey;
-	
+
 }
 
 .site-footer {
@@ -918,7 +919,7 @@ body {
 
 .site-colophon{
 	font-size: .75em;
-    padding-top: 1rem;	
+    padding-top: 1rem;
 }
 /*--------------------------------------------------------------
 # Comments
@@ -1055,3 +1056,22 @@ object {
   display: block;
 }
 
+/*--------------------------------------------------------------
+## Videos
+--------------------------------------------------------------*/
+
+ul.video_list {
+    margin-left: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.videolist_content{
+  display: inline-block;
+  width: 40%;
+
+}
+.videolist_content iframe {
+  height: auto;
+  vertical-align: middle;
+}

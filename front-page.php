@@ -44,22 +44,28 @@ get_header(); ?>
             <div id="fp_main_one" class="row">
 							<?php get_template_part( 'inc/home-boxes/template/homebox', 'frontpage' );?>
 						</div>
+
+						<!-- FEATURED VIDEO -->
+						<div id="fp_featured_video" class="row">
+                <?php get_template_part( 'inc/post-video/template/video', 'frontpage' );?>
+            </div>
+
             <!-- FEATURED PRODUCTS -->
             <div id="fp_main_two" class="row">
                 <?php get_template_part( 'components/features/woocommerce', 'featuredproducts' );?>
             </div>
 
             <div id="fp_main_three" class="row">
-				<div id="latest_post_container" class="col-lg-8 col-xl-9">
+							<div id="latest_post_container" class="col-lg-8 col-xl-9">
                 	<?php get_template_part( 'components/features/posts', 'recent' );?>
-                </div>
+              </div>
 
-                <div id="home-middle-right" class="widget-area col-lg-4 col-xl-3" role="complementary">
-                    <?php if ( is_active_sidebar( 'home-middle-right' ) ) { ?>
-                            <?php dynamic_sidebar( 'home-middle-right' ); ?>
-                    <?php }	?>
-                </div>
-			</div>
+              <div id="home-middle-right" class="widget-area col-lg-4 col-xl-3" role="complementary">
+                  <?php if ( is_active_sidebar( 'home-middle-right' ) ) { ?>
+                          <?php dynamic_sidebar( 'home-middle-right' ); ?>
+                  <?php }	?>
+              </div>
+						</div>
 
 		</main>
 

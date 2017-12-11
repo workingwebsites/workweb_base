@@ -1,6 +1,7 @@
 <?php
 /**
  * Create custom post for videos with featured option
+ * Post type = wws_post_video
  */
  function wws_create_postvideo_type() {
 //Set the labels for vid
@@ -54,3 +55,31 @@ function wws_default_videopost_format( $format ) {
 }
 
 add_filter( 'option_default_post_format', 'wws_default_videopost_format' );
+
+
+/*
+*  Return custom posts
+*/
+
+function wws_get_videos(){
+  $args = array(
+  	'posts_per_page'   => 5,
+  	'offset'           => 0,
+  	'category'         => '',
+  	'category_name'    => '',
+  	'orderby'          => 'date',
+  	'order'            => 'DESC',
+  	'include'          => '',
+  	'exclude'          => '',
+  	'meta_key'         => '',
+  	'meta_value'       => '',
+  	'post_type'        => 'wws_post_video',
+  	'post_mime_type'   => '',
+  	'post_parent'      => '',
+  	'author'	   => '',
+  	'author_name'	   => '',
+  	'post_status'      => 'publish',
+  	'suppress_filters' => true
+  );
+  return get_posts( $args );
+}

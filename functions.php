@@ -299,7 +299,7 @@ require get_template_directory() . '/inc/modal/modal.php';
 /**
  * Load Video Posts.
  */
-require get_template_directory() . '/inc/post_video/post_video.php';
+require get_template_directory() . '/inc/post-video/post_video.php';
 
 
 
