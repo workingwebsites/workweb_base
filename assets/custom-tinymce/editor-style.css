@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+/* Makes bootstrap css usefull.  See: assets/bootstrap-3.3.7/css/bootstrap.css */
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+  
+  .col-md-12 {
+    width: 99%;
+  }
+
+  .col-md-9 {
+    width: 74%;
+  }
+  .col-md-9:hover {
+    width: 74%;
+	border: 1px dotted #cccccc;
+    border-collapse: collapse;
+  }
+  
+  .col-md-8 {
+    width: 66%;
+  }
+  .col-md-8:hover {
+    width: 65%;
+    border: 1px dotted #cccccc;
+    border-collapse: collapse;
+  }
+
+  .col-md-6 {
+    width: 49%;
+  }
+  .col-md-6:hover {
+    width: 49%;
+    border: 1px dotted #cccccc;
+    border-collapse: collapse;
+  }
+  
+  .col-md-4 {
+    width: 33%;
+  }
+  .col-md-4:hover {
+    width: 32%;
+    border: 1px dotted #cccccc;
+    border-collapse: collapse;
+  }
+  
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-3:hover {
+    width: 24%;
+	border: 1px dotted #cccccc;
+    border-collapse: collapse;
+  }
+
