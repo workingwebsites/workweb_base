@@ -90,7 +90,7 @@ function workweb_base_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
-	
+
 	// Set refresh widgets in customizer
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
@@ -126,7 +126,7 @@ function workweb_base_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	
+
 	//Sidebar Home Middle Right
 	register_sidebar( array(
 		'name'          => esc_html__( 'Home Middle Right', 'workweb_base' ),
@@ -137,7 +137,7 @@ function workweb_base_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	
+
 	//Sidebar Home Page
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar Home', 'workweb_base' ),
@@ -148,7 +148,7 @@ function workweb_base_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	
+
 	//Sidebar Inside
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar Inside', 'workweb_base' ),
@@ -159,7 +159,7 @@ function workweb_base_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	
+
 	//Footer sidebars
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 1', 'workweb_base' ),
@@ -170,7 +170,7 @@ function workweb_base_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 2', 'workweb_base' ),
 		'id'            => 'sidebar-footer-2',
@@ -180,7 +180,7 @@ function workweb_base_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 3', 'workweb_base' ),
 		'id'            => 'sidebar-footer-3',
@@ -190,7 +190,7 @@ function workweb_base_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar 4', 'workweb_base' ),
 		'id'            => 'sidebar-footer-4',
@@ -215,7 +215,7 @@ function workweb_base_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
+
 	//Add bootstrap
 	/*
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/assets/bootstrap-3.3.7/css/bootstrap.min.css' );
@@ -223,21 +223,21 @@ function workweb_base_scripts() {
 	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/assets/bootstrap-3.3.7/js/bootstrap.min.js', array( 'jquery' ) );
 	*/
 	//Bootstrap 4.0
-	
+
 	//Needs Tether first
 	wp_enqueue_script( 'tether-script', get_template_directory_uri() . '/assets/tether/js/tether.min.js', array( 'jquery' ) );
-	
+
 	//Now Bootstrap
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/assets/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css' );
 
 	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/assets/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js', array( 'jquery' ) );
-	
-	
+
+
 	//Add Fonts
 	//wp_enqueue_style( 'fonts-google', get_stylesheet_directory_uri().'/style_fonts.css' );
 	wp_enqueue_style( 'fonts-google', get_template_directory_uri().'/style_fonts.css' );
-	
-	//Add Base Style 
+
+	//Add Base Style
 	wp_enqueue_style( 'base-style',   get_template_directory_uri().'/style_base.css' );
 
 }
@@ -296,6 +296,11 @@ require get_template_directory() . '/assets/custom-tinymce/custom-tinymce.php';
  */
 require get_template_directory() . '/inc/modal/modal.php';
 
+/**
+ * Load Video Posts.
+ */
+require get_template_directory() . '/inc/post_video/post_video.php';
+
 
 
 /**
@@ -319,7 +324,7 @@ function workweb_base_sidebar_class(){
 
 function category_id_class( $classes ) {
 	$arClass[] = "col-md-12";
-	
+
 	return $arClass;
 }
 
@@ -329,11 +334,11 @@ add_filter( 'post_class', 'category_id_class' );
 
 /**
  * replace one of the widget image sizes
- * 
+ *
  * examples replaces the banner layout's image with the 'large' size image from Settings > Media
- * 
+ *
  * If you replacing $size with a custom image size, you must register that separately with add_image_size()
- * 
+ *
  * @param	$size	string		slug of registered image size
  * @return	string|array	slug of registered image size or "array( width, height )" (not recommended)
  */
@@ -345,7 +350,7 @@ function fpw_change_image_size( $size ) {
 	return $size;
 }
 add_filter( 'fpw_image_size', 'fpw_change_image_size' );
-	
+
 
 /**
  * Add editor style so more WYSIWYG in editing
@@ -377,6 +382,5 @@ function wws_get_custom_logo(){
 	$logo = wp_get_attachment_image_src( $custom_logo_id , 'thumbnail' );
 	if ( has_custom_logo() ) {
 			echo '<img class="img-fluid" src="'. esc_url( $logo[0] ) .'">';
-	} 
+	}
 }
-
