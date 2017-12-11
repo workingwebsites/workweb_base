@@ -31,6 +31,9 @@ get_header(); ?>
 					?>
 
                 	<?php echo wpautop( $contact_post->post_content ) ?>
+                    
+					<?php edit_post_link( 'Edit', '<p>', '</p>', $postid ); ?> 
+
                 </article>
 
             </div>
@@ -47,11 +50,11 @@ get_header(); ?>
             </div>
             
             <div id="fp_main_three" class="row">
-				<div id="latest_post_container" class="col-md-8">
-                	<?php get_template_part( 'components/features/posts', 'latest' );?>
+				<div id="latest_post_container" class="col-lg-8 col-xl-9">
+                	<?php get_template_part( 'components/features/posts', 'recent' );?>
                 </div>
                 
-                <div id="home-middle-right" class="widget-area col-md-4" role="complementary">
+                <div id="home-middle-right" class="widget-area col-lg-4 col-xl-3" role="complementary">
                     <?php if ( is_active_sidebar( 'home-middle-right' ) ) { ?>
                             <?php dynamic_sidebar( 'home-middle-right' ); ?>
                     <?php }	?>
