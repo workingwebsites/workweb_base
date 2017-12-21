@@ -1060,6 +1060,14 @@ object {
 ## Videos
 --------------------------------------------------------------*/
 
+.videomain_content iframe {
+  /*height: auto;*/
+  vertical-align: middle;
+      margin-left: auto;
+    margin-right: auto;
+    display: inherit;
+}
+
 ul.video_list {
     margin-left: 0;
     list-style: none;
