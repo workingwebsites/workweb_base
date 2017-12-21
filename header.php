@@ -24,20 +24,24 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site container-fluid">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'workweb_base' ); ?></a>
-    
     <?php get_template_part( 'inc/modal/template/modal', 'contact' ); ?>
 
-	<header id="masthead" class="site-header row" role="banner">
-    	<div class="col-md-7">
-    		<?php get_template_part( 'components/header/header' ); ?>
-		</div>
-        
-        <aside id="topbar-right" class="col-md-5" role="complementary">
-    		<?php if ( is_active_sidebar( 'topbar-right' ) ) { ?>
-                    <?php dynamic_sidebar( 'topbar-right' ); ?>
-            <?php }	?>
-		</aside>
+	<header class="site-header" role="banner">
+		<div id="masthead"  class="row">
+	    <div class="col-md-7">
+	    		<?php get_template_part( 'components/header/header' ); ?>
+			</div>
 
+			<aside id="topbar-right" class="col-md-5" role="complementary">
+				<?php if ( is_active_sidebar( 'topbar-right' ) ) { ?>
+					<?php dynamic_sidebar( 'topbar-right' ); ?>
+				<?php }	?>
+			</aside>
+		</div>
+
+		<div id="navigation" class="row">
+    		<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
+		</div>
 	</header>
-    
+
 	<div id="content" class="site-content row">

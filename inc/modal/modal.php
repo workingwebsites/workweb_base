@@ -2,9 +2,10 @@
 //Set shortcode
 
 function wws_contactmodal_func( $atts ){
-	$a = shortcode_atts( array(
-								'title' => 'Contact Us'
-								), $atts );
+
+	$a = shortcode_atts( array('title' => 'Contact Us'
+								),
+						 $atts );
 	
 	$str_return = '	<!-- Button trigger modal -->
 					<button class="btn but_contmodal" type="button" data-toggle="modal" data-target="#contactModal">
@@ -12,8 +13,17 @@ function wws_contactmodal_func( $atts ){
 					.'</button>';
 	return $str_return;
 }
+
+
 add_shortcode( 'contactmodal', 'wws_contactmodal_func' );
 
+
+/*
+function footag_func( $atts ) {
+	return "foo = {$atts['foo']}";
+}
+add_shortcode( 'footag', 'footag_func' );
+*/
 
 /* Add customizer dd box to select contact page */
 
