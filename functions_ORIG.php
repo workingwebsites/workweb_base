@@ -45,6 +45,13 @@ function workweb_base_setup() {
 	add_image_size( 'workweb_base-featured-image', 640, 9999 );
 	add_image_size( 'workweb_base-portfolio-featured-image', 800, 9999 );
 
+	// This theme uses wp_nav_menu() in one location.
+	/*
+	register_nav_menus( array(
+		'menu-1' => esc_html__( 'Top', 'workweb_base' ),
+	) );
+	*/
+
 
 	/**
 	 * Add support for core custom logo.
@@ -105,34 +112,6 @@ add_action( 'after_setup_theme', 'workweb_base_setup' );
    );
  }
  add_action( 'init', 'wws_register_menus' );
-
- /**
-  * Add bootstrap classes to menu items
-  */
- function wws_bootstrap_navitem_class( $classes, $item, $args ) {
-		if ( 'short-top-menu' === $args->theme_location ){
-			$str_current = empty( $item->current ) ? NULL : ' active';
-			$classes[] = 'nav-item'.$str_current;
-		}
-
- 		return $classes;
-
- }
-
- add_filter( 'nav_menu_css_class', 'wws_bootstrap_navitem_class', 10, 4 );
-
- /**
-  * Add bootstrap classes to menu links
-  */
- function add_specific_menu_location_atts( $atts, $item, $args ) {
-    if( 'short-top-menu' === $args->theme_location  ) {
-      $atts['class'] = 'nav-link';
-    }
-    return $atts;
-}
-add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3 );
-
-
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

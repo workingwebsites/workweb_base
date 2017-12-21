@@ -9,7 +9,10 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: workweb_base
 Tags: Blog
-GitHub Theme URI: https://github.com/workingwebsites/wp-base-theme
+GitHub Theme URI: https://github.com/workingwebsites/workweb_base
+
+Designed to by updated via GitHub
+https://github.com/afragen/github-updater
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -33,7 +36,7 @@ Base styles for theme workweb_base
 # Typography
 # Layout
   ## Header
-  
+
 --------------------------------------------------------------*/
 
 
@@ -57,4 +60,3 @@ textarea {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-
