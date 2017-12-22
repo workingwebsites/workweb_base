@@ -49,6 +49,13 @@ get_header(); ?>
 						</div>
 						<hr />
 
+						<!-- PORTFOLIO -->
+						<h1>Portfolio</h1>
+						<div id="fp_portfolio" class="row">
+                <?php get_template_part( 'inc/portfolio/template/portfolio', 'frontpage' );?>
+            </div>
+						<hr />
+
 						<!-- FEATURED VIDEO -->
 						<h1>Featured Video</h1>
 						<div id="fp_featured_video" class="row">

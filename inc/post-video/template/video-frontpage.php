@@ -7,7 +7,6 @@
 	$featured_video = array_shift($ar_videos);
 
 	//Pull it from the ArrayAccess
-
 	if(!empty($featured_video)){
 		$featured_content = apply_filters( 'the_content', $featured_video->post_content );
 ?>
@@ -20,17 +19,15 @@
 <?php } ?>
 	<div class="video_list col-md-4">
 		<?php
-			foreach ( $ar_videos As $video) {
+			foreach ( $ar_videos As $video ) {
 				$content = apply_filters( 'the_content', $video->post_content );
 		 ?>
-		<!--  <div id="video_row" class="row video_container"> -->
 		 	<ul class="video_list">
 				<li>
 					<span class="videolist_content"><?php echo $content  ?></span>
 					<span class="videolist_title"><?php echo $video->post_title ?></span>
 				</li>
 		 	</ul>
-		 <!-- </div> -->
 		<?php } ?>
 
 	</div>
