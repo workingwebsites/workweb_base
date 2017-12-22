@@ -561,6 +561,7 @@ table {
 --------------------------------------------------------------*/
 #navigation{
   background-color: DimGrey;
+  font-size: 1rem;
 }
 
 ul.navbar-nav{
