@@ -37,7 +37,7 @@
           'has_archive'        => true,
           'hierarchical'       => true,
           'menu_position'      => 5,
-          'supports'           => array( 'title', 'editor', 'page-attributes', 'post-formats', 'thumbnail'),
+          'supports'           => array( 'title', 'editor', 'page-attributes', 'post-formats', 'thumbnail', 'excerpt'),
           'taxonomies'        => array('category', 'post_tag' )
     )
   );
@@ -83,3 +83,19 @@ function wws_get_portfolio(){
   );
   return get_posts( $args );
 }
+
+/*
+*  Set image sizes for portfolio
+*/
+add_image_size( 'portfolio-thumb', 500, 500, 'center', 'center' );
+
+/*
+*  Add style sheet and js
+*/
+function wws_portfolio_scripts(){
+  wp_enqueue_style( 'portfolio-css', get_template_directory_uri() . '/inc/portfolio/css/portfolio.css' );
+  wp_enqueue_script( 'portfolio-script', get_template_directory_uri() . '/inc/portfolio/js/portfolio.js' );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'wws_portfolio_scripts', 1 );

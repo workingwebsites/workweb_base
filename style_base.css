@@ -788,6 +788,8 @@ body {
 	background: grey;
 }
 
+## Header
+
 
 
 .site-title h1 {
@@ -812,7 +814,12 @@ body {
 /*--------------------------------------------------------------
 ## Content
 --------------------------------------------------------------*/
-
+#fp_toprow_image {
+    min-height: 25rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 /*--------------------------------------------------------------
 ## Single Column / No Active Sidebar

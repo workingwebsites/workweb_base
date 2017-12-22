@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Base theme for Karin\'s site
+Base theme for Working Websites sites.
 
 == Installation ==
 
