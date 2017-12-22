@@ -16,16 +16,18 @@ get_header(); ?>
 	<div id="primary" class="content-area <?php  workweb_base_primary_class() ?>">
     	 <!-- HEADER IMAGE AND ABOUT US -->
         <div id="fp_toprow" class="row">
-            <div id="fp_toprow_image" class="col-md-5" style="background-image: url('<?php echo  get_header_image(); ?>')">
+            <div id="fp_toprow_image" class="col-md-12" style="background-image: url('<?php echo  get_header_image(); ?>')">
                 <?php wws_get_custom_logo()?>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-12">
 							<h1>Home Page</h1>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <?php get_template_part( 'components/page/content', 'page' ); ?>
                 <?php endwhile; ?>
 
                 <article class="fp_contact col-md-12">
+									<hr />
+									<h2>Contact Info</h2>
 									<?php
 										$postid = wws_get_contactpage();
 										$contact_post = get_post($postid);
@@ -47,6 +49,13 @@ get_header(); ?>
             <div id="fp_main_one" class="row">
 							<?php get_template_part( 'inc/home-boxes/template/homebox', 'frontpage' );?>
 						</div>
+						<hr />
+
+						<!-- PORTFOLIO -->
+						<h1>Portfolio</h1>
+						<div id="fp_portfolio" class="row">
+                <?php get_template_part( 'inc/portfolio/template/portfolio', 'frontpage' );?>
+            </div>
 						<hr />
 
 						<!-- FEATURED VIDEO -->

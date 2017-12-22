@@ -342,6 +342,11 @@ require get_template_directory() . '/inc/modal/modal.php';
  */
 require get_template_directory() . '/inc/post-video/post_video.php';
 
+/**
+ * Load Portfolio.
+ */
+require get_template_directory() . '/inc/portfolio/portfolio.php';
+
 
 
 /**
