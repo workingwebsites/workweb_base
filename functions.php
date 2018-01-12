@@ -429,3 +429,4 @@ function wws_get_custom_logo(){
 			echo '<img class="img-fluid" src="'. esc_url( $logo[0] ) .'">';
 	}
 }
+?>

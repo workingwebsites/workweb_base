@@ -17,7 +17,6 @@ get_header(); ?>
     	 <!-- HEADER IMAGE AND ABOUT US -->
         <div id="fp_toprow" class="row">
             <div id="fp_toprow_image" class="col-md-12" style="background-image: url('<?php echo  get_header_image(); ?>')">
-                <?php wws_get_custom_logo()?>
             </div>
             <div class="col-md-12">
 							<h1>Home Page</h1>
@@ -54,7 +53,7 @@ get_header(); ?>
 						<!-- PORTFOLIO -->
 						<h1>Portfolio</h1>
 						<div id="fp_portfolio" class="row">
-                <?php get_template_part( 'inc/portfolio/template/portfolio', 'frontpage' );?>
+                <?php get_template_part( 'inc/portfolio/template/portfolio', 'grid' );?>
             </div>
 						<hr />
 

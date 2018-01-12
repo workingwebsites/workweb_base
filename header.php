@@ -29,7 +29,8 @@
 	<header class="site-header" role="banner">
 		<div id="masthead"  class="row">
 	    <div class="col-md-7">
-	    		<?php get_template_part( 'components/header/header' ); ?>
+	    		<?php //get_template_part( 'components/header/header' ); ?>
+					<?php get_template_part( 'components/header/header', 'image' ); ?>
 			</div>
 
 			<aside id="topbar-right" class="col-md-5" role="complementary">

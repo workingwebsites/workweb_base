@@ -788,7 +788,9 @@ body {
 	background: grey;
 }
 
-## Header
+.site-logo{
+  text-align: center;
+}
 
 
 
@@ -799,7 +801,7 @@ body {
 
 .site-title h1 a{
 	text-decoration:none;
-  	color: #15b3b7;
+  	color: blue;
 }
 
 
@@ -808,7 +810,7 @@ body {
     padding-top: 1.5em;
     font-family: sans-serif;
     font-weight: bold;
-	color: #602003;
+	color: brown;
 }
 
 /*--------------------------------------------------------------
