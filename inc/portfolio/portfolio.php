@@ -60,10 +60,10 @@ add_filter( 'option_default_post_format', 'wws_default_portfolio_format' );
 /*
 *  Return custom posts
 */
+function wws_get_portfolio( $num_posts = 12 ){
 
-function wws_get_portfolio(){
   $args = array(
-  	'posts_per_page'   => 5,
+  	'posts_per_page'   => $num_posts,
   	'offset'           => 0,
   	'category'         => '',
   	'category_name'    => '',
@@ -88,6 +88,7 @@ function wws_get_portfolio(){
 *  Set image sizes for portfolio
 */
 add_image_size( 'portfolio-thumb', 500, 500, 'center', 'center' );
+add_image_size( 'portfolio-thumblink', 100, 100, 'center', 'center' );
 
 /*
 *  Add style sheet and js
