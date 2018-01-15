@@ -347,6 +347,11 @@ require get_template_directory() . '/inc/post-video/post_video.php';
  */
 require get_template_directory() . '/inc/portfolio/portfolio.php';
 
+/**
+ * Load Testimony.
+ */
+require get_template_directory() . '/inc/testimony/testimony.php';
+
 
 
 /**

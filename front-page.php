@@ -71,9 +71,15 @@ get_header(); ?>
             </div>
 						<hr />
 
+						<!-- TESTIMONY -->
+						<h1>Testimony</h1>
+						<div id="fp_testimony" class="row">
+								<?php get_template_part( 'inc/testimony/template/testimony', 'grid' );?>
+						</div>
+						<hr />
 
             <div id="fp_main_three" class="row">
-							<!-- FEATURED PRODUCTS -->
+							<!-- FEATURED POSTS -->
 							<div id="latest_post_container" class="col-lg-8 col-xl-9">
 								<h1>Latest Post</h1>
                 <?php get_template_part( 'components/features/posts', 'latest' );?>

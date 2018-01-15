@@ -95,7 +95,7 @@ add_image_size( 'portfolio-thumblink', 100, 100, 'center', 'center' );
 */
 function wws_portfolio_scripts(){
   wp_enqueue_style( 'portfolio-css', get_template_directory_uri() . '/inc/portfolio/css/portfolio.css' );
-  wp_enqueue_script( 'portfolio-script', get_template_directory_uri() . '/inc/portfolio/js/portfolio.js' );
+  //wp_enqueue_script( 'portfolio-script', get_template_directory_uri() . '/inc/portfolio/js/portfolio.js' );
 
 }
 
