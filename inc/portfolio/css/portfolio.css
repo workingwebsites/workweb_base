@@ -1,8 +1,11 @@
-.portfolio_container{
-  position: relative;
-  min-height: 17.5rem;
-  padding: 1rem;
-  text-align: center;
+.portfolio_container {
+    position: relative;
+    min-height: 17.5rem;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .portfolio_img_container{

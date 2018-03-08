@@ -1,11 +1,11 @@
 <?php
 /* REQUIRES HOME BOX */
 
-	$ar_videos = wws_get_videos();
+	$ar_homebox = wws_get_homebox();
 
 	$i = -1;	// To set first one at 0
 
-	foreach ( $ar_videos As $videos) {
+	foreach ( $ar_homebox As $homebox) {
 		++$i;
 
 		//Set vars

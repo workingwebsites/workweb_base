@@ -1,6 +1,10 @@
-<?php 
+<?php
 $postid = wws_get_contactpage();
 $contact_post = get_post($postid);
+
+$content =  $contact_post->post_content;
+$content_string = apply_filters( 'the_content', $content );
+
 ?>
 <!-- Modal -->
 <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -13,7 +17,7 @@ $contact_post = get_post($postid);
         </button>
       </div>
       <div class="modal-body">
-      	<?php echo wpautop( $contact_post->post_content ) ?>
+      	<?php echo $content_string; ?>
       </div>
       <!--<div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

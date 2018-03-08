@@ -1,0 +1,7 @@
+ul#breadcrumbs {
+	list-style: none;
+	}
+
+ul#breadcrumbs li {
+	display: inline;
+}

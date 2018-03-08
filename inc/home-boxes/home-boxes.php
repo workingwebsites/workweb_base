@@ -23,9 +23,9 @@ function wws_get_homebox($return_url = false){
 
 				//Return image string, or file url?
 				if( $return_url == true ){
-					$image_url = wp_get_attachment_image_src($homebox['image'], 'homebox');
+					$image_url = wp_get_attachment_image_src($homebox['image'], 'homebox-slider');
 				}else{
-					$image_url = wp_get_attachment_image($homebox['image'], 'homebox');
+					$image_url = wp_get_attachment_image($homebox['image'], 'homebox-slider');
 				}
 
 				if( !empty( $image_url ) ){
@@ -33,7 +33,6 @@ function wws_get_homebox($return_url = false){
 				}
 
 			}
-
 
 			//Get lilnkl
 			$homebox['link'] = get_permalink( $homebox['link'] );
@@ -199,4 +198,9 @@ function wwws_homeboxes_customize_register( WP_Customize_Manager $wp_customize )
 add_action( 'customize_register', 'wwws_homeboxes_customize_register' );
 
 
+
+/*
+*  Set image sizes for portfolio
+*/
+add_image_size( 'homebox-slider', 1400, 999, false );
 ?>
