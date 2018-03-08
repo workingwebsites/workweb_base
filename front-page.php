@@ -78,6 +78,15 @@ get_header(); ?>
 						</div>
 						<hr />
 
+						<!-- FEATURED PAGE -->
+						<h1>Featured Page</h1>
+						<div id="fp_featuredpage" class="row">
+								<div id="div_featuredpage" class="col-md-12">
+									<?php get_template_part( 'inc/featuredpage/template/featuredpage');?>
+								</div>
+						</div>
+						<hr />
+
             <div id="fp_main_three" class="row">
 							<!-- FEATURED POSTS -->
 							<div id="latest_post_container" class="col-lg-8 col-xl-9">

@@ -43,6 +43,10 @@
 		<div id="navigation" class="row">
     		<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
 		</div>
+
+		<div class="row"><?php custom_breadcrumbs(); ?></div>
+
+
 	</header>
 
 	<div id="content" class="site-content row">

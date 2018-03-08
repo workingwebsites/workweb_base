@@ -45,6 +45,12 @@ function workweb_base_setup() {
 	add_image_size( 'workweb_base-featured-image', 640, 9999 );
 	add_image_size( 'workweb_base-portfolio-featured-image', 800, 9999 );
 
+	/**
+	 * Pages get excerpts
+	 */
+
+	add_post_type_support( 'page', 'excerpt' );
+
 
 	/**
 	 * Add support for core custom logo.
@@ -91,7 +97,7 @@ function workweb_base_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
-add_action( 'after_setup_theme', 'workweb_base_setup' );
+add_action( 'after_setup_theme', 'workweb_base_setup', 5 );
 
 /**
  * Add menus
@@ -133,6 +139,17 @@ add_action( 'after_setup_theme', 'workweb_base_setup' );
 add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3 );
 
 
+/**
+ * Add 'More' item to short menu
+ */
+function add_last_nav_item($items, $args) {
+  if( $args->theme_location == 'short-top-menu' ){
+    $items .= '<li id="menu-item-more" class="menu-item nav-item"><a href="#" class="more-link collapsed nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">more</a></li>';
+  }
+  return $items;
+}
+
+add_filter('wp_nav_menu_items','add_last_nav_item', 10, 2);
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -238,7 +255,7 @@ function workweb_base_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'workweb_base_widgets_init' );
+add_action( 'widgets_init', 'workweb_base_widgets_init', 9 );
 
 
 /* Allow shortcodes in widget areas */
@@ -351,6 +368,18 @@ require get_template_directory() . '/inc/portfolio/portfolio.php';
  * Load Testimony.
  */
 require get_template_directory() . '/inc/testimony/testimony.php';
+
+
+/**
+ * Load Featured Page.
+ */
+require get_template_directory() . '/inc/featuredpage/featuredpage.php';
+
+
+/**
+ * Load breadcrumbs.
+ */
+require get_template_directory() . '/inc/breadcrumbs/breadcrumbs.php';
 
 
 
