@@ -162,7 +162,7 @@ add_action( 'customize_register', 'wws_customize_register_homebox' );
 /**
  * Functions to clean up text boxes
  */
-
+/*
 function wws_sanitize_text( $str_text ){
 	return sanitize_text_field( $str_text );
 }
@@ -176,7 +176,7 @@ function wws_sanitize_img_url( $str_url ){
 	$id = attachment_url_to_postid( $str_url );
 	return $id;
 }
-
+*/
 
 /**
  * Make it editable in Customizer preview screen

@@ -48,14 +48,14 @@ function wws_get_sliders($return_url = false){
 /**
  * Sets number of boxes for screen
  */
-$NumBoxes = 3;
+$NumSliders = 3;
 
 
 
 function wws_customize_register_slider( $wp_customize ) {
-	global $NumBoxes;
+	global $NumSliders;
 
-	for ($i = 0; $i < $NumBoxes; $i ++) {
+	for ($i = 0; $i < $NumSliders; $i ++) {
 		$hb_text = $i+1;
 
 		/*** IMAGE ***/
@@ -72,7 +72,7 @@ function wws_customize_register_slider( $wp_customize ) {
 		$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,
 																	'image_upload_wws_'.$i,
 																	array(
-																		'label'    => __('----- Home Box '.$hb_text.' -----', 'mappins'),
+																		'label'    => __('----- Slider '.$hb_text.' -----', 'mappins'),
 																		'section'  => 'static_front_page',
 																		'settings' => 'wws_options[slider]['.$i.'][image]',
 																		)
@@ -156,7 +156,7 @@ add_action( 'customize_register', 'wws_customize_register_slider' );
 /**
  * Functions to clean up text boxes
  */
-
+/*
 function wws_sanitize_text( $str_text ){
 	return sanitize_text_field( $str_text );
 }
@@ -170,16 +170,16 @@ function wws_sanitize_img_url( $str_url ){
 	$id = attachment_url_to_postid( $str_url );
 	return $id;
 }
-
+*/
 
 /**
  * Make it editable in Customizer preview screen
  */
 function wwws_slideres_customize_register( WP_Customize_Manager $wp_customize ) {
-	global $NumBoxes;
+	global $NumSliders;
 
 
-	for ($i = 0; $i < $NumBoxes; $i ++) {
+	for ($i = 0; $i < $NumSliders; $i ++) {
 		$wp_customize->selective_refresh->add_partial( 'wws_options[slider]['.$i.'][image]', // settings name
 			array(
 			'selector' => '#slider_'.$i,	// where it is on the screen
