@@ -70,7 +70,7 @@ function wws_customize_register_slider( $wp_customize ) {
 									));
 		//Add to customizer
 		$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,
-																	'image_upload_wws_'.$i,
+																	'image_upload_wws_slider'.$i,
 																	array(
 																		'label'    => __('----- Slider '.$hb_text.' -----', 'mappins'),
 																		'section'  => 'static_front_page',
@@ -197,4 +197,13 @@ add_action( 'customize_register', 'wwws_slideres_customize_register' );
 *  Set image sizes for portfolio
 */
 add_image_size( 'slider-slider', 1400, 999, false );
+
+/*
+*  Add style sheet and js
+*/
+function wws_slider_scripts(){
+  wp_enqueue_style( 'slider-css', get_template_directory_uri() . '/inc/slider/css/slider.css' );
+}
+
+add_action( 'wp_enqueue_scripts', 'wws_slider_scripts', 1 );
 ?>

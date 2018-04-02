@@ -1,0 +1,10 @@
+/* css for slider */
+#wwsCarouselSlider .sliderrow {
+    min-height: 500px;
+}
+
+#wwsCarouselSlider .carousel-item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
