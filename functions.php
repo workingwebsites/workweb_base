@@ -339,6 +339,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/home-boxes/home-boxes.php';
 
 /**
+ * Load Slider.
+ */
+require get_template_directory() . '/inc/slider/slider.php';
+
+/**
  * Support WooCommerce
  */
 require get_template_directory() . '/inc/woocommerce.php';
