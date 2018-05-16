@@ -17,7 +17,6 @@
 	$recent_posts = wp_get_recent_posts( $args );
 
 	foreach( $recent_posts as $recent ){
-		//$content = 'foo'.the_content( $recent['post_content'] );
 		$content = apply_filters('the_content', $recent['post_content']);
 
 ?>

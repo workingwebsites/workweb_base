@@ -28,8 +28,9 @@
 				<button type="button" class="btn-sm" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
 					more
 				</button>
--->
+
 				<a href="#" class="more-link" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">more</a>
+				-->
 			</div>
 		</nav>
 
