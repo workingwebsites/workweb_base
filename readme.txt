@@ -4,7 +4,7 @@ Tags:
 
 Requires at least:
 Tested up to:
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,9 @@ Base theme for Working Websites sites.
 
 
 == Changelog ==
+
+= 1.0 - 2017-05-16 =
+Various Update.
 
 = 1.0 - [Date] =
 * Initial release
