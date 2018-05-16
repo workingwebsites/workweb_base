@@ -16,7 +16,7 @@ get_header(); ?>
 	<div id="primary" class="content-area <?php  workweb_base_primary_class() ?>">
 		<!-- SLIDER -->
 		<!-- <div id="fp_slider" class="row"> -->
-			
+
 			<?php get_template_part( 'inc/slider/template/slider', 'frontpage' );?>
 		<!-- </div> -->
 
@@ -107,12 +107,6 @@ get_header(); ?>
 				</div>
 
 		</main>
-
-
-	</div>
-
-
+	</div>	 <!-- END SITE CONTENT ROW -->
 <?php get_footer(); ?>
-
-
 <?php endif; ?>

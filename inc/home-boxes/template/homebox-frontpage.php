@@ -4,6 +4,7 @@
 	$ar_homebox = wws_get_homebox();
 
 	$i = -1;	// To set first one at 0
+	$mdNum = 3;
 
 	foreach ( $ar_homebox As $homebox) {
 		++$i;
@@ -15,7 +16,7 @@
 		$link = isset( $homebox['link'] )?'<a href="'.$homebox['link'].'" class="homebox_link_a">More</a>': NULL;
 
 ?>
-	<div id="homebox_<?php echo $i ?>" class="col-md-4 homebox_container">
+	<div id="homebox_<?php echo $i ?>" class="col-md-<?php echo $mdNum ?> homebox_container">
 		<div class="homebox">
 			<div class="homebox_image"><?php echo  $image ?></div>
 			<h2 class="homebox_title"><?php echo  $title ?></h2>

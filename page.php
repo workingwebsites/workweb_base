@@ -16,7 +16,6 @@ get_header(); ?>
 
 	<div id="primary" class="content-area <?php workweb_base_primary_sidebar_class() ?>">
 		<main id="main" class="site-main <?php workweb_base_main_class() ?>" role="main">
-
 			<?php
 			while ( have_posts() ) : the_post();
 

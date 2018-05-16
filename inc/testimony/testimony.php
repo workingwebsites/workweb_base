@@ -60,30 +60,33 @@ add_filter( 'option_default_post_format', 'wws_default_testimony_format' );
 /*
 *  Return custom posts
 */
-function wws_get_testimony( $num_posts = 12 ){
 
-  $args = array(
-  	'posts_per_page'   => $num_posts,
-  	'offset'           => 0,
-  	'category'         => '',
-  	'category_name'    => '',
-  	'orderby'          => 'date',
-  	'order'            => 'DESC',
-  	'include'          => '',
-  	'exclude'          => '',
-  	'meta_key'         => '',
-  	'meta_value'       => '',
-  	'post_type'        => 'wws_testimony',
-  	'post_mime_type'   => '',
-  	'post_parent'      => '',
-  	'author'	   => '',
-  	'author_name'	   => '',
-  	'post_status'      => 'publish',
-  	'suppress_filters' => true
-  );
-  return get_posts( $args );
+if( ! function_exists ( 'wws_get_testimony' ) ) {
+//Returns Testimonies
+//Ref: https://codex.wordpress.org/Template_Tags/get_posts 
+  function wws_get_testimony( $num_posts = 12 ){
+    $args = array(
+    	'posts_per_page'   => $num_posts,
+    	'offset'           => 0,
+    	'category'         => '',
+    	'category_name'    => '',
+    	'orderby'          => 'date',
+    	'order'            => 'DESC',
+    	'include'          => '',
+    	'exclude'          => '',
+    	'meta_key'         => '',
+    	'meta_value'       => '',
+    	'post_type'        => 'wws_testimony',
+    	'post_mime_type'   => '',
+    	'post_parent'      => '',
+    	'author'	   => '',
+    	'author_name'	   => '',
+    	'post_status'      => 'publish',
+    	'suppress_filters' => true
+    );
+    return get_posts( $args );
+  }
 }
-
 
 /*
 *  Add Meta boxes

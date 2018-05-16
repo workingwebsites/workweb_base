@@ -1,6 +1,5 @@
 <?php
 //Set shortcode
-
 function wws_contactmodal_func( $atts ){
 
 	$a = shortcode_atts( array('title' => 'Contact Us'

@@ -11,15 +11,14 @@
 
 
 ?>
-	</div>
-	<footer id="footer-widgets" class="site-footer row" role="contentinfo">
-		<?php get_template_part( 'components/footer/site' ); ?>
-	</footer>
-    <footer id="colophon" class="site-colophon row" role="contentinfo">
-    	<?php get_template_part( 'components/footer/site', 'colophon' ); ?>
-    </footer>
-</div>
-<?php wp_footer(); ?>
-
-</body>
+			</div> <!-- END site-content row  FROM HEADER -->
+				<footer id="footer-widgets" class="site-footer row" role="contentinfo">
+					<?php get_template_part( 'components/footer/site' ); ?>
+				</footer>
+			    <footer id="colophon" class="site-colophon row" role="contentinfo">
+			    	<?php get_template_part( 'components/footer/site', 'colophon' ); ?>
+			    </footer>
+		</div>	<!-- END #PAGE -->
+		<?php wp_footer(); ?>
+	</body>
 </html>

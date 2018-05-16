@@ -95,8 +95,47 @@ add_image_size( 'portfolio-thumblink', 100, 100, 'center', 'center' );
 */
 function wws_portfolio_scripts(){
   wp_enqueue_style( 'portfolio-css', get_template_directory_uri() . '/inc/portfolio/css/portfolio.css' );
-  //wp_enqueue_script( 'portfolio-script', get_template_directory_uri() . '/inc/portfolio/js/portfolio.js' );
-
 }
 
 add_action( 'wp_enqueue_scripts', 'wws_portfolio_scripts', 1 );
+
+
+/* Add customizer dd box to select portfolio page.
+The content of this page appears on the Portfolio Archive.
+The blurb can appear on the home page. */
+
+function wws_portfoliopage_func($wp_customize){
+
+	$wp_customize->add_section('wws_portfolio', array(
+        'title'    => __('Portfolio Page', 'wws_portfolio'),
+        'description' => 'Select a page that appears on the portfolio list.',
+        'priority' => 120,
+    ));
+
+    $wp_customize->add_setting('wws_options[portfolio_page]', array(
+        'capability'     => 'edit_theme_options',
+        'type'          => 'theme_mod',
+
+    ));
+
+    $wp_customize->add_control('wws_portfolio_page_select', array(
+        'label'      => __('Select the Portfolio Page', 'wws_portfolio'),
+        'section'    => 'wws_portfolio',
+        'type'    => 'dropdown-pages',
+        'allow_addition' => true,
+        'settings'   => 'wws_options[portfolio_page]',
+    ));
+}
+
+add_action('customize_register', 'wws_portfoliopage_func');
+
+
+function wws_get_portfoliopage(){
+	$ar_theme_ops = get_theme_mod('wws_options');
+
+	if( $ar_theme_ops['portfolio_page'] ){
+		return $ar_theme_ops['portfolio_page'];
+	}else{
+		return NULL;
+	}
+}

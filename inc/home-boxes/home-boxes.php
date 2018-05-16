@@ -1,9 +1,8 @@
 <?php
-/**
- * Displays home boxes
- */
-
-
+ /**
+  * Sets number of boxes for screen
+  */
+ $NumBoxes = 4;
 
 /**
  * Returns array of home boxes
@@ -48,13 +47,6 @@ function wws_get_homebox($return_url = false){
 
 	return $ar_results;
 }
-
-
-
-/**
- * Sets number of boxes for screen
- */
-$NumBoxes = 3;
 
 
 

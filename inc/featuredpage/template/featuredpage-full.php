@@ -19,14 +19,15 @@ $link = get_permalink( $featured_page->ID );
 				</header>
 				<div class="entry-content">
 			      <?php echo $content; ?>
-						<p class="more_link" style="float: right; margin-right: 3rem;">
+						<p class="more_link">
 							<a href="<?php echo $link?>" class="homebox_link_a btn btn-sm portfolio_but" >More</a>
 						</p>
 				</div>
-
-			  <footer class="entry-footer">
-					<span class="edit-link"><a class="post-edit-link" href="<?php echo get_edit_post_link( $featured_page->ID ); ?>">Edit</a></span>
-			  </footer>
+				<?php if ( is_user_logged_in() ) { ?>
+						<footer class="entry-footer">
+							<span class="edit-link"><a class="post-edit-link" href="<?php echo get_edit_post_link( $featured_page->ID ); ?>">Edit</a></span>
+						</footer>
+				<?php } ?>
 
 			</article><!-- #post-## -->
 		</div>
