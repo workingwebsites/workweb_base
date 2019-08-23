@@ -7,6 +7,29 @@
  * @package workweb_base
  */
 
+/**
+ * SET FEATURES.
+ * Set what features will appear (mostly on front page).
+ * Copy this section to child functions.php file and adjust
+ */
+
+if ( ! function_exists ( 'setwwbFeatures' ) ) {
+	function setwwbFeatures(){
+		global $wwbFeatures;
+
+		$wwbFeatures['home_box'] = true;
+		$wwbFeatures['slider'] = true;
+		$wwbFeatures['portfolio'] = true;
+		$wwbFeatures['video'] = true;
+		$wwbFeatures['featured_products'] = true;
+		$wwbFeatures['testimony'] = true;
+		$wwbFeatures['featured_page'] = true;
+	}
+}
+setwwbFeatures();
+
+
+
 if ( ! function_exists( 'workweb_base_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -336,12 +359,12 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Home Box file.
  */
-require get_template_directory() . '/inc/home-boxes/home-boxes.php';
+if($wwbFeatures['home_box'] == true){require get_template_directory() . '/inc/home-boxes/home-boxes.php';}
 
 /**
  * Load Slider.
  */
-require get_template_directory() . '/inc/slider/slider.php';
+if($wwbFeatures['slider'] == true){require get_template_directory() . '/inc/slider/slider.php';}
 
 /**
  * Support WooCommerce
@@ -362,23 +385,23 @@ require get_template_directory() . '/inc/modal/modal.php';
 /**
  * Load Video Posts.
  */
-require get_template_directory() . '/inc/post-video/post_video.php';
+if($wwbFeatures['video'] == true){require get_template_directory() . '/inc/post-video/post_video.php';}
 
 /**
  * Load Portfolio.
  */
-require get_template_directory() . '/inc/portfolio/portfolio.php';
+if($wwbFeatures['portfolio'] == true){require get_template_directory() . '/inc/portfolio/portfolio.php';}
 
 /**
  * Load Testimony.
  */
-require get_template_directory() . '/inc/testimony/testimony.php';
+if($wwbFeatures['testimony'] == true){require get_template_directory() . '/inc/testimony/testimony.php';}
 
 
 /**
  * Load Featured Page.
  */
-require get_template_directory() . '/inc/featuredpage/featuredpage.php';
+if($wwbFeatures['featured_page'] == true){require get_template_directory() . '/inc/featuredpage/featuredpage.php';}
 
 
 /**
