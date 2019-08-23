@@ -8,9 +8,11 @@ function wws_get_sliders($return_url = false){
 
 	$ar_results = array();
 
-	//Parse each box
-	if( $ar_theme_ops['slider'] ){
+	//Bail if nothing
+	//if
 
+	//Parse each box
+	if( !empty($ar_theme_ops['slider']) ){		
 		foreach ( $ar_theme_ops['slider'] As $slider ) {
 			//Get image
 			if( !empty( $slider['image'] ) ){
@@ -29,7 +31,7 @@ function wws_get_sliders($return_url = false){
 			}
 
 			//Get lilnkl
-			$slider['link'] = get_permalink( $slider['link'] );
+			$slider['link'] = empty($slider['link']) ? NULL : get_permalink( $slider['link'] );
 
 			$ar_results[] = $slider;
 		}	// end foreach

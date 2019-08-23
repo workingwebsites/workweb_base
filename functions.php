@@ -15,15 +15,15 @@
 
 if ( ! function_exists ( 'setwwbFeatures' ) ) {
 	function setwwbFeatures(){
-		global $wwbFeatures;
-
-		$wwbFeatures['home_box'] = true;
-		$wwbFeatures['slider'] = true;
-		$wwbFeatures['portfolio'] = true;
-		$wwbFeatures['video'] = true;
-		$wwbFeatures['featured_products'] = true;
-		$wwbFeatures['testimony'] = true;
-		$wwbFeatures['featured_page'] = true;
+		$GLOBALS['wwbFeatures']['header_image'] = true;
+		$GLOBALS['wwbFeatures']['home_box'] = true;
+		$GLOBALS['wwbFeatures']['slider'] = true;
+		$GLOBALS['wwbFeatures']['portfolio'] = true;
+		$GLOBALS['wwbFeatures']['video'] = true;
+		$GLOBALS['wwbFeatures']['featured_products'] = true;
+		$GLOBALS['wwbFeatures']['testimony'] = true;
+		$GLOBALS['wwbFeatures']['featured_page'] = true;
+		$GLOBALS['wwbFeatures']['modal'] = true;
 	}
 }
 setwwbFeatures();
@@ -359,12 +359,12 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Home Box file.
  */
-if($wwbFeatures['home_box'] == true){require get_template_directory() . '/inc/home-boxes/home-boxes.php';}
+if($GLOBALS['wwbFeatures']['home_box'] == true){require get_template_directory() . '/inc/home-boxes/home-boxes.php';}
 
 /**
  * Load Slider.
  */
-if($wwbFeatures['slider'] == true){require get_template_directory() . '/inc/slider/slider.php';}
+if($GLOBALS['wwbFeatures']['slider'] == true){require get_template_directory() . '/inc/slider/slider.php';}
 
 /**
  * Support WooCommerce
@@ -380,28 +380,28 @@ require get_template_directory() . '/assets/custom-tinymce/custom-tinymce.php';
 /**
  * Load Contact Modal.
  */
-require get_template_directory() . '/inc/modal/modal.php';
+if($GLOBALS['wwbFeatures']['modal'] == true){require get_template_directory() . '/inc/modal/modal.php';}
 
 /**
  * Load Video Posts.
  */
-if($wwbFeatures['video'] == true){require get_template_directory() . '/inc/post-video/post_video.php';}
+if($GLOBALS['wwbFeatures']['video'] == true){require get_template_directory() . '/inc/post-video/post_video.php';}
 
 /**
  * Load Portfolio.
  */
-if($wwbFeatures['portfolio'] == true){require get_template_directory() . '/inc/portfolio/portfolio.php';}
+if($GLOBALS['wwbFeatures']['portfolio'] == true){require get_template_directory() . '/inc/portfolio/portfolio.php';}
 
 /**
  * Load Testimony.
  */
-if($wwbFeatures['testimony'] == true){require get_template_directory() . '/inc/testimony/testimony.php';}
+if($GLOBALS['wwbFeatures']['testimony'] == true){require get_template_directory() . '/inc/testimony/testimony.php';}
 
 
 /**
  * Load Featured Page.
  */
-if($wwbFeatures['featured_page'] == true){require get_template_directory() . '/inc/featuredpage/featuredpage.php';}
+if($GLOBALS['wwbFeatures']['featured_page'] == true){require get_template_directory() . '/inc/featuredpage/featuredpage.php';}
 
 
 /**

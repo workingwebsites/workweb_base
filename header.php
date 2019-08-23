@@ -24,13 +24,16 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site container-fluid">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'workweb_base' ); ?></a>
-    <?php get_template_part( 'inc/modal/template/modal', 'contact' ); ?>
+	<?php if ($GLOBALS['wwbFeatures']['modal'] == true) {
+		 ?>
+	<?php get_template_part( 'inc/modal/template/modal', 'contact' ); ?>
+	<?php } ?>
 
 	<header class="site-header" role="banner">
 		<div id="masthead"  class="row">
 	    <div class="col-md-7">
 	    		<?php //get_template_part( 'components/header/header' ); ?>
-					<?php get_template_part( 'components/header/header', 'image' ); ?>
+				<?php get_template_part( 'components/header/header', 'image' ); ?>
 			</div>
 
 			<aside id="topbar-right" class="col-md-5" role="complementary">

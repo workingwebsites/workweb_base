@@ -17,13 +17,13 @@ else :
 <div id="primary" class="content-area <?php workweb_base_primary_class() ?>">
 	<!-- SLIDER -->
 	<?php
-		if ($GLOBALS['wwbFeatures']['slider'] == true) {
+		if ($wwbFeatures['slider'] == true) {
 			get_template_part('inc/slider/template/slider', 'frontpage');
 		}
 		?>
 	<!-- HEADER IMAGE AND ABOUT US -->
 	<div id="fp_toprow" class="row">
-		<?php if ($GLOBALS['wwbFeatures']['portfolio'] == true) { ?>
+		<?php if ($wwbFeatures['portfolio'] == true) { ?>
 		<div id="fp_toprow_image" class="col-md-12" style="background-image: url('<?php echo  get_header_image(); ?>')">
 		</div>
 		<?php } ?>
@@ -32,8 +32,6 @@ else :
 			<?php while (have_posts()) : the_post(); ?>
 			<?php get_template_part('components/page/content', 'page'); ?>
 			<?php endwhile; ?>
-			
-			<?php if ($GLOBALS['wwbFeatures']['modal'] == true) { ?>
 			<article class="fp_contact col-md-12">
 				<hr />
 				<h2>Contact Info</h2>
@@ -44,14 +42,13 @@ else :
 				<?php echo wpautop($contact_post->post_content) ?>
 				<?php edit_post_link('Edit', '<p>', '</p>', $postid); ?>
 			</article>
-			<?php } ?>
 		</div>
 	</div>
 
 	<main id="main" class="site-main <?php workweb_base_main_class() ?>" role="main">
 
 		<!-- HOME BOXES -->
-		<?php if ($GLOBALS['wwbFeatures']['home_box'] == true) { ?>
+		<?php if ($wwbFeatures['home_box'] == true) { ?>
 		<h1>Home Boxes</h1>
 		<div id="fp_main_one" class="row">
 			<?php get_template_part('inc/home-boxes/template/homebox', 'frontpage'); ?>
@@ -60,7 +57,7 @@ else :
 		<?php } ?>
 
 		<!-- PORTFOLIO -->
-		<?php if ($GLOBALS['wwbFeatures']['portfolio'] == true) { ?>
+		<?php if ($wwbFeatures['portfolio'] == true) { ?>
 		<h1>Portfolio</h1>
 		<div id="fp_portfolio" class="row">
 			<?php get_template_part('inc/portfolio/template/portfolio', 'grid'); ?>
@@ -69,7 +66,7 @@ else :
 		<?php } ?>
 
 		<!-- FEATURED VIDEO -->
-		<?php if ($GLOBALS['wwbFeatures']['video'] == true) { ?>
+		<?php if ($wwbFeatures['video'] == true) { ?>
 		<h1>Featured Video</h1>
 		<div id="fp_featured_video" class="row">
 			<?php get_template_part('inc/post-video/template/video', 'frontpage'); ?>
@@ -78,7 +75,7 @@ else :
 		<?php } ?>
 
 		<!-- FEATURED PRODUCTS -->
-		<?php if ($GLOBALS['wwbFeatures']['featured_products'] == true) { ?>
+		<?php if ($wwbFeatures['featured_products'] == true) { ?>
 		<h1>Featured Product</h1>
 		<div id="fp_main_two" class="row">
 			<?php get_template_part('components/features/woocommerce', 'featuredproducts'); ?>
@@ -87,7 +84,7 @@ else :
 		<?php } ?>
 
 		<!-- TESTIMONY -->
-		<?php if ($GLOBALS['wwbFeatures']['testimony'] == true) { ?>
+		<?php if ($wwbFeatures['testimony'] == true) { ?>
 		<h1>Testimony</h1>
 		<div id="fp_testimony" class="row">
 			<?php get_template_part('inc/testimony/template/testimony', 'grid'); ?>
@@ -96,7 +93,7 @@ else :
 		<?php } ?>
 
 		<!-- FEATURED PAGE -->
-		<?php if ($GLOBALS['wwbFeatures']['featured_page'] == true) { ?>
+		<?php if ($wwbFeatures['featured_page'] == true) { ?>
 		<h1>Featured Page</h1>
 		<div id="fp_featuredpage" class="row">
 			<div id="div_featuredpage" class="col-md-12">

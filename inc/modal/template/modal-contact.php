@@ -3,7 +3,7 @@ $postid = wws_get_contactpage();
 $contact_post = get_post($postid);
 
 $content =  $contact_post->post_content;
-$content_string = apply_filters( 'the_content', $content );
+$content_string = apply_filters('the_content', $content);
 
 ?>
 <!-- Modal -->
@@ -17,12 +17,8 @@ $content_string = apply_filters( 'the_content', $content );
         </button>
       </div>
       <div class="modal-body">
-      	<?php echo $content_string; ?>
+        <?php echo $content_string; ?>
       </div>
-      <!--<div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>-->
     </div>
   </div>
 </div>

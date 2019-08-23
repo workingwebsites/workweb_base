@@ -14,7 +14,7 @@ function wws_get_homebox($return_url = false){
 	$ar_results = array();
 
 	//Parse each box
-	if( $ar_theme_ops['homebox'] ){
+	if( !empty($ar_theme_ops['homebox']) ){
 
 		foreach ( $ar_theme_ops['homebox'] As $homebox ) {
 			//Get image

@@ -62,7 +62,7 @@ add_action( 'customize_register', 'wwws_modal_customize_register' );
 function wws_get_contactpage(){
 	$ar_theme_ops = get_theme_mod('wws_options');
 
-	if( $ar_theme_ops['contact_page'] ){
+	if( !empty($ar_theme_ops['contact_page']) ){
 		return $ar_theme_ops['contact_page'];
 	}else{
 		return NULL;

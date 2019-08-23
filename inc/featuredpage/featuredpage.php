@@ -63,7 +63,7 @@ add_action( 'customize_register', 'wwws_featuredpage_customize_register' );
 function wws_get_featuredpage(){
 	$ar_theme_ops = get_theme_mod('wws_options');
 
-	if( $ar_theme_ops['featured_page'] ){
+	if( !empty($ar_theme_ops['featured_page']) ){
 		return $ar_theme_ops['featured_page'];
 	}else{
 		return NULL;
