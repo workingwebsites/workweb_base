@@ -5,6 +5,12 @@ Base styles for theme workweb_base
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# Custom Colours
+  ## Body
+  ## Header
+  ## Navigation
+  ## Links
+  ## Content
 # Normalize
 # Accessibility
 # Alignments
@@ -30,6 +36,47 @@ Base styles for theme workweb_base
   ## Galleries
   ## Videos
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Custom Colours
+--------------------------------------------------------------*/
+:root {
+  /*--------------------------------------------------------------
+  ##  Body
+  --------------------------------------------------------------*/
+  --body-background: white;
+  
+  /*--------------------------------------------------------------
+  ##  Header
+  --------------------------------------------------------------*/
+  --masthead-background: teal;
+  --sitetitle-text: orange;
+  --sitedesc-text: wheat;
+
+  /*--------------------------------------------------------------
+  ##  Navigation
+  --------------------------------------------------------------*/
+  --navigation-background: cadetblue;
+  /*--------------------------------------------------------------
+  ##  Links
+  --------------------------------------------------------------*/
+  --a-link: #191970;
+  --a-visited:#a5275c;
+
+  /*--------------------------------------------------------------
+  ##  Content
+  --------------------------------------------------------------*/
+  --content-title-color: black;
+  --widget-title: #692d12;
+
+  /*--------------------------------------------------------------
+  ##  Footer
+  --------------------------------------------------------------*/
+  --footer-background-color: DarkSlateGrey;
+  --footer-border-color: black;
+  --footer-text-color: black;
+  --footer-text-title-color: white;
+}
 
 
 /*--------------------------------------------------------------
@@ -345,7 +392,7 @@ th {
 h1, h2, h3, h4, h5, h6 {
   	clear: both;
   	font-family: sans-serif;
-	color: black;
+	color: var(--content-title-color);
 }
 
 p {
@@ -560,91 +607,17 @@ table {
 # Navigation
 --------------------------------------------------------------*/
 #navigation{
-  background-color: DimGrey;
+  background-color: var(--navigation-background);
   font-size: 1rem;
 }
 
 ul.navbar-nav{
   margin-left: 0;
 }
-/*
-#container-nav{
-	background-color: #6cbcbe;
-    border-top: 1px solid #5cadaf;
-    border-bottom: 1px solid #5cadaf;
+li.page_item {
+  padding: 0 .5em;
 }
 
-.main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%;
-  padding: .75em 0;
-}
-
-ul.nav-menu a {
-    color: #fcfeff;
-    font-size: 1.2em;
-    text-shadow: 1px 1px #499a9c;
-}
-
-ul.nav-menu a:hover {
-    color: #1f1f2a;
-}
-
-.main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-
-}
-
-#top-menu .sub-menu{
-    border-left: 1px solid #696969;
-    border-bottom: 1px solid #696969;
-    border-right: 1px solid #696969;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-    display: none;
-    position: absolute;
-    z-index: 99999;
-    width: 100%;
-    background: #6cbcbe;
-    font-size: 90%;
-}
-
-#top-menu li:hover > ul.sub-menu{
-    display: block;
-}
-
-#top-menu ul.sub-menu li:hover ul.sub-menu{
-	left: 95%;
-	top: 0;
-}
-
-
-#top-menu li {
-	float: none;
-    display: table-cell;
-    background-color:inherit;
-    vertical-align: top;
-	text-align: center;
-}
-
-#top-menu li .sub-menu li{
-	display:list-item;
-}
-
-
-.main-navigation li {
-  float: left;
-  position: relative;
-}
-.main-navigation a {
-  display: block;
-  text-decoration: none;
-}
-*/
 /*** XS ***/
 @media screen and (max-width: 767px) {
 	.menu-toggle,
@@ -744,13 +717,13 @@ ul.nav-menu a:hover {
 # Links
 --------------------------------------------------------------*/
 a {
-  color: #191970;
+  color: var(--a-link);
 }
 a:visited {
-   color: #a5275c;
+   color: var(--a-visited)
 }
 a:hover, a:focus, a:active {
-	color: #a5275c;
+	color: var(--a-visited);
 }
 a:focus {
   outline: thin dotted;
@@ -774,7 +747,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: var(--body-background);
   /* Fallback for when there is no custom background color defined. */
 }
 
@@ -785,7 +758,7 @@ body {
 ##  Header
 --------------------------------------------------------------*/
 #masthead{
-	background: grey;
+	background: var(--masthead-background);
 }
 
 .site-logo{
@@ -801,16 +774,16 @@ body {
 
 .site-title h1 a{
 	text-decoration:none;
-  	color: blue;
+  	color: var(--sitetitle-text);
 }
 
 
 .site-description h2 {
-    font-size: 1.25em;
-    padding-top: 1.5em;
-    font-family: sans-serif;
-    font-weight: bold;
-	color: brown;
+  font-size: 1.25em;
+  padding-top: 1.5em;
+  font-family: sans-serif;
+  font-weight: bold;
+	color: var(--sitedesc-text);
 }
 
 /*--------------------------------------------------------------
@@ -879,7 +852,7 @@ body {
 --------------------------------------------------------------*/
 #sidebar-home .widget-title{
   text-align: center;
-  color: #692d12;
+  color: var(--widget-title);
 }
 
 #topbar-right{
@@ -893,13 +866,13 @@ body {
 
 .site-footer,
 .site-colophon {
-    background-color: grey;
+  background-color: var(--footer-background-color);
 
 }
 
 .site-footer {
-    border-top: 1px solid black;
-    color: black;
+  border-top: 1px solid var(--footer-border-color);
+  color: var(--footer-text-color);
 	font-size: 85%;
 	padding-top: 1em;
 }
@@ -910,13 +883,13 @@ body {
 .site-footer h4,
 .site-footer h5,
 .site-footer h6{
-	color: white;
+	color: var(--footer-text-title-color);
 	font-size: 1.85em;
 }
 
 .site-info h4 {
-    color: white;
-    border-bottom: 1px solid black;
+    color: var(--footer-text-title-color);
+    border-bottom: 1px solid var(--footer-border-color);
     padding-bottom: .5em;
 }
 

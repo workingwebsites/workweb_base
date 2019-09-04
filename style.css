@@ -30,6 +30,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 Base styles for theme workweb_base
 
 */
+:root {
+  --content-title-color: brown;
+}
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -60,3 +63,4 @@ textarea {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+
