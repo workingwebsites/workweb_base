@@ -2,7 +2,7 @@
 		// You can upload a custom header and it'll output in a smaller logo size.
 		$header_image = get_header_image();
 
-		if ( ! empty( $header_image ) ) { ?>
+		if ( has_custom_logo() ) { ?>
 			<div id="header-image" class="custom-header">
 				<div class="header-wrapper">
 					<div class="site-branding row">
