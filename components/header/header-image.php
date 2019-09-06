@@ -7,7 +7,7 @@
 				<div class="header-wrapper">
 					<div class="site-branding row">
 						<div class="site-logo col-sm-12 col-md-3 col-lg-2">
-							<?php wws_get_custom_logo()?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php wws_get_custom_logo()?></a>
 						</div>
 						<div class="site-info col-sm-12 col-md-9 col-lg-10">
 							<div class="site-title col-12">

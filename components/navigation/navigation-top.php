@@ -18,7 +18,7 @@
 									);
 		?>
 
-		<nav id="nav_short-top-menu" class="navbar navbar-toggleable-sm" role="navigation">
+		<nav id="nav_short-top-menu" class="navbar navbar navbar-expand-lg" role="navigation">
 		  <div id="navbarNav" class="col-xs-11">
 		    <?php wp_nav_menu( $arg_short ); ?>
 		  </div>
