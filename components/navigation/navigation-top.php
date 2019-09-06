@@ -24,7 +24,7 @@
 		  </div>
 
 			<div id="but_show_full-top-menu" class="col-xs-1">
-<!--
+				<!--
 				<button type="button" class="btn-sm" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
 					more
 				</button>

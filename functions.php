@@ -24,6 +24,8 @@ if ( ! function_exists ( 'setwwbFeatures' ) ) {
 		$GLOBALS['wwbFeatures']['testimony'] = true;
 		$GLOBALS['wwbFeatures']['featured_page'] = true;
 		$GLOBALS['wwbFeatures']['modal'] = true;
+
+		$GLOBALS['wwbVars']['more'] = 'more';
 	}
 }
 setwwbFeatures();
@@ -167,7 +169,7 @@ add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3
  */
 function add_last_nav_item($items, $args) {
   if( $args->theme_location == 'short-top-menu' ){
-    $items .= '<li id="menu-item-more" class="menu-item nav-item"><a href="#" class="more-link collapsed nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">more</a></li>';
+    $items .= '<li id="menu-item-more" class="menu-item nav-item"><a href="#" class="more-link collapsed nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">'.$GLOBALS['wwbVars']['more'].'</a></li>';
   }
   return $items;
 }
@@ -302,7 +304,7 @@ function workweb_base_scripts() {
 	//Needs Tether first
 	wp_enqueue_script( 'tether-script', get_template_directory_uri() . '/assets/tether/js/tether.min.js', array( 'jquery' ) );
 	//Popper
-	wp_enqueue_script( 'popper-script', get_template_directory_uri() . '/assets/popperjs/node_modules/popper.js/popper.min.js', array( 'jquery' ) );
+	//wp_enqueue_script( 'popper-script', get_template_directory_uri() . '/assets/popperjs/popper.min.js', array( 'jquery' ) );
 
 	//Now Bootstrap
 	//wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/assets/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css' );
