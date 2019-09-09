@@ -25,7 +25,11 @@ if ( ! function_exists ( 'setwwbFeatures' ) ) {
 		$GLOBALS['wwbFeatures']['featured_page'] = true;
 		$GLOBALS['wwbFeatures']['modal'] = true;
 
+		//What should the 'more' link say?
 		$GLOBALS['wwbVars']['more'] = 'more';
+		
+		//Change to bust style cache
+		$GLOBALS['wwbVars']['stylecache'] = wp_get_theme()->get('Version');
 	}
 }
 setwwbFeatures();
@@ -331,7 +335,7 @@ add_action( 'wp_enqueue_scripts', 'workweb_base_scripts', 1 );
  * Make sure local style gets last word
  */
 function workweb_base_mainstyle(){
-	wp_enqueue_style( 'workweb_base-style', get_stylesheet_uri(), array( 'bootstrap-style', 'fonts-google', 'base-style' ) );
+	wp_enqueue_style( 'workweb_base-child-style', get_stylesheet_uri(), array( 'bootstrap-style', 'fonts-google', 'base-style' ), $GLOBALS['wwbVars']['stylecache'] );
 }
 add_action( 'wp_enqueue_scripts', 'workweb_base_mainstyle');
 
