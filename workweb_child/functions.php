@@ -1,18 +1,8 @@
 <?php
 /**
- * Makes sure child theme styles override parents
+ * Child theme automatically overrides parent
  */
-add_action( 'wp_enqueue_scripts', 'workweb_enqueue_styles' );
-function workweb_enqueue_styles() {
-    $parent_style = 'parent-style'; 
- 
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style_base.css' );
-    wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style ),
-        wp_get_theme()->get('Version')
-    );
-}
+
 
 
 /**
@@ -29,6 +19,25 @@ function setwwbFeatures(){
     $GLOBALS['wwbFeatures']['testimony'] = true;
     $GLOBALS['wwbFeatures']['featured_page'] = true;
     $GLOBALS['wwbFeatures']['modal'] = true;
+
+    //What should the 'more' link say?
+    $GLOBALS['wwbVars']['more'] = 'more';
+    
+    //Change to bust style cache
+    $GLOBALS['wwbVars']['stylecache'] = wp_get_theme()->get('Version');
+
+    //Home Box settings: How many boxes?
+    $GLOBALS['wwbVars']['homebox_num'] = 4;
 }
 setwwbFeatures();
-?>
+
+/**
+ * Set page widths
+ */
+function workweb_base_primary_sidebar_class(){
+    echo 	"col-md-8 col-lg-7 col-lg-offset-1";
+}
+
+function workweb_base_sidebar_class(){
+    echo 	"col-md-4 col-lg-3";
+}
