@@ -6,3 +6,4 @@ $arPosts = get_query_var('arPosts');
         <li><?php the_time('F d'); ?> - <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
     <?php endwhile; ?>
 </ul>
+
