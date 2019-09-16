@@ -66,7 +66,8 @@ function custom_breadcrumbs($nav_class = 'col-12') {
             if(!empty($category)) {
 
                 // Get last category post is in
-                $last_category = end(array_values($category));
+                $arVal = array_values($category);
+                $last_category = end($arVal);
 
                 // Get parent any categories and create array
                 $get_cat_parents = rtrim(get_category_parents($last_category->term_id, true, ','),',');

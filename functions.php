@@ -429,7 +429,6 @@ if( ! function_exists ( 'workweb_base_primary_class' ) ) {
 
 if( ! function_exists ( 'workweb_base_main_class' ) ) {
 	function workweb_base_main_class(){
-		//echo 	"row";
 	}
 }
 
