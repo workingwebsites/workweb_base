@@ -30,6 +30,9 @@ if ( ! function_exists ( 'setwwbFeatures' ) ) {
 		
 		//Change to bust style cache
 		$GLOBALS['wwbVars']['stylecache'] = wp_get_theme()->get('Version');
+
+		//Home Box settings: How many boxes?
+		$GLOBALS['wwbVars']['homebox_num'] = 4;
 	}
 }
 setwwbFeatures();

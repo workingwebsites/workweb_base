@@ -31,7 +31,7 @@
 
 	<header class="site-header" role="banner">
 		<div id="masthead"  class="row">
-	    <div class="col-md-7">
+	    	<div class="col-md-7">
 	    		<?php //get_template_part( 'components/header/header' ); ?>
 				<?php get_template_part( 'components/header/header', 'image' ); ?>
 			</div>

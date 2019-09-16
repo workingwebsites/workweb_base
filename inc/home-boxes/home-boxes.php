@@ -1,16 +1,19 @@
 <?php
  /**
-  * Sets number of boxes for screen
+  * Sets number of boxes for screen.  
+  * Numboxes is array.
   */
- $NumBoxes = 4;
+ $NumBoxes = $GLOBALS['wwbVars']['homebox_num'];
 
 /**
  * Returns array of home boxes
  */
 
+
+
+
 function wws_get_homebox($return_url = false){
 	$ar_theme_ops = get_theme_mod('wws_options');
-
 	$ar_results = array();
 
 	//Parse each box
