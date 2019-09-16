@@ -418,6 +418,11 @@ if($GLOBALS['wwbFeatures']['featured_page'] == true){require get_template_direct
 require get_template_directory() . '/inc/breadcrumbs/breadcrumbs.php';
 
 /**
+ * Load custom recent post widget.
+ */
+require get_template_directory() . '/inc/widgets/recent-posts.php';
+
+/**
  * Add Bootstrap classes
 */
 if( ! function_exists ( 'workweb_base_primary_class' ) ) {
