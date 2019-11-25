@@ -138,7 +138,8 @@ add_action('after_setup_theme', 'workweb_base_setup', 5);
  * Add menus
  */
 if (!function_exists('wws_register_menus')) {
-	function wws_register_menus(){
+	function wws_register_menus()
+	{
 		register_nav_menus(
 			array(
 				'short-top-menu' => __('Short Top Menu'),
@@ -477,15 +478,15 @@ if (!function_exists('workweb_base_sidebar_class')) {
 	}
 }
 
+if (!function_exists('category_id_class')) {
+	function category_id_class($arClasses)
+	{
+		$arClass[] = "col-md-12 ";
 
-function category_id_class($classes)
-{
-	$arClass[] = "col-md-12";
-
-	return $arClass;
+		return $arClass;
+	}
+	add_filter('post_class', 'category_id_class');
 }
-
-add_filter('post_class', 'category_id_class');
 
 
 
