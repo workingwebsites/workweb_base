@@ -1,6 +1,7 @@
 <?php
+	$num_posts = $GLOBALS['wwbVars']['latestposts_num'];
 	$args = array(
-		'numberposts' => 1,
+		'numberposts' => $num_posts,
 		'offset' => 0,
 		'category' => 0,
 		'orderby' => 'post_date',

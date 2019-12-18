@@ -35,6 +35,9 @@ if (!function_exists('setwwbFeatures')) {
 
 		//Home Box settings: How many boxes?
 		$GLOBALS['wwbVars']['homebox_num'] = 4;
+
+		//Latest Post settings: How many boxes?
+		$GLOBALS['wwbVars']['latestposts_num'] = 1;
 	}
 }
 setwwbFeatures();
