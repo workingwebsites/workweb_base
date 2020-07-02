@@ -10,7 +10,8 @@ $NumBoxes = $GLOBALS['wwbVars']['homebox_num'];
  * Returns array of home boxes
  */
 
-function wws_get_homebox($return_url = false){
+function wws_get_homebox($return_url = false)
+{
 	$ar_theme_ops = get_theme_mod('wws_options');
 	$ar_results = array();
 
@@ -34,7 +35,7 @@ function wws_get_homebox($return_url = false){
 			}
 
 			//Get lilnkl
-			$homebox['link'] = get_permalink($homebox['link']);
+			$homebox['link'] = array_key_exists('link', $homebox) ? get_permalink($homebox['link']) : NULL;
 
 			$ar_results[] = $homebox;
 		}	// end foreach
@@ -48,7 +49,8 @@ function wws_get_homebox($return_url = false){
 
 
 
-function wws_customize_register_homebox($wp_customize){
+function wws_customize_register_homebox($wp_customize)
+{
 	global $NumBoxes;
 
 	for ($i = 0; $i < $NumBoxes; $i++) {
@@ -163,7 +165,8 @@ add_action('customize_register', 'wws_customize_register_homebox');
 /**
  * Make it editable in Customizer preview screen
  */
-function wwws_homeboxes_customize_register(WP_Customize_Manager $wp_customize){
+function wwws_homeboxes_customize_register(WP_Customize_Manager $wp_customize)
+{
 	global $NumBoxes;
 
 
@@ -172,7 +175,8 @@ function wwws_homeboxes_customize_register(WP_Customize_Manager $wp_customize){
 			'wws_options[homebox][' . $i . '][image]', // settings name
 			array(
 				'selector' => '#homebox_' . $i,	// where it is on the screen
-				'render_callback' => function () { },
+				'render_callback' => function () {
+				},
 			)
 		);
 	}
