@@ -1,22 +1,4 @@
 <?php
-//Set shortcode
-/*
-function wws_featuredpage_func( $atts ){
-
-	$a = shortcode_atts( array('title' => 'Contact Us'
-								),
-						 $atts );
-
-	$str_return = '	<!-- Button trigger modal -->
-					<button class="btn but_contmodal" type="button" data-toggle="modal" data-target="#contactModal">
-					'. $a['title']
-					.'</button>';
-	return $str_return;
-}
-
-
-add_shortcode( 'contactmodal', 'wws_featuredpage_func' );
-*/
 /* Add customizer dd box to select contact page */
 function wws_featuredpage_func($wp_customize){
 
@@ -69,5 +51,3 @@ function wws_get_featuredpage(){
 		return NULL;
 	}
 }
-
-?>
