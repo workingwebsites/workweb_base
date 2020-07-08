@@ -24,7 +24,7 @@ if (!function_exists('setwwbFeatures')) {
 		$GLOBALS['wwbFeatures']['video'] = true;
 		$GLOBALS['wwbFeatures']['featured_products'] = true;
 		$GLOBALS['wwbFeatures']['testimony'] = true;
-		$GLOBALS['wwbFeatures']['featured_page'] = true;
+		$GLOBALS['wwbFeatures']['featured_pages'] = true;
 		$GLOBALS['wwbFeatures']['modal'] = true;
 
 		//What should the 'more' link say?
@@ -35,6 +35,9 @@ if (!function_exists('setwwbFeatures')) {
 
 		//Home Box settings: How many boxes?
 		$GLOBALS['wwbVars']['homebox_num'] = 4;
+
+		//Featured Pages settings: How many pages?
+		$GLOBALS['wwbVars']['featuredpages_num'] = 1;
 
 		//Latest Post settings: How many boxes?
 		$GLOBALS['wwbVars']['latestposts_num'] = 1;
@@ -437,6 +440,13 @@ if ($GLOBALS['wwbFeatures']['testimony'] == true) {
  */
 if ($GLOBALS['wwbFeatures']['featured_page'] == true) {
 	require get_template_directory() . '/inc/featuredpage/featuredpage.php';
+}
+
+/**
+ * Load Featured Page.
+ */
+if ($GLOBALS['wwbFeatures']['featured_pages'] == true) {
+	require get_template_directory() . '/inc/featuredpages/featuredpages.php';
 }
 
 
