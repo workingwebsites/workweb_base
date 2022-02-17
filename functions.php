@@ -24,6 +24,7 @@ if (!function_exists('setwwbFeatures')) {
 		$GLOBALS['wwbFeatures']['video'] = true;
 		$GLOBALS['wwbFeatures']['featured_products'] = true;
 		$GLOBALS['wwbFeatures']['testimony'] = true;
+		$GLOBALS['wwbFeatures']['featured_page'] = true;
 		$GLOBALS['wwbFeatures']['featured_pages'] = true;
 		$GLOBALS['wwbFeatures']['modal'] = true;
 
