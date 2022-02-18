@@ -1,5 +1,5 @@
 === workweb_base ===
-Contributors: Test Lisa
+Contributors: 
 Tags:
 
 Requires at least:
