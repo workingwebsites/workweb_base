@@ -2,8 +2,12 @@
 $postid = wws_get_contactpage();
 $contact_post = get_post($postid);
 
-$content =  $contact_post->post_content;
-$content_string = apply_filters('the_content', $content);
+if (empty($contact_post)) {
+  $content_string = "";
+} else {
+  $content =  $contact_post->post_content;
+  $content_string = apply_filters('the_content', $content);
+}
 
 ?>
 <!-- Modal -->
