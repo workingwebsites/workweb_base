@@ -325,23 +325,10 @@ function workweb_base_scripts()
 	}
 
 	//Add bootstrap
-
-	//Needs Tether first
-	wp_enqueue_script('tether-script', get_template_directory_uri() . '/assets/tether/js/tether.min.js', array('jquery'));
-	//Popper
-	//wp_enqueue_script( 'popper-script', get_template_directory_uri() . '/assets/popperjs/popper.min.js', array( 'jquery' ) );
-
-	//Now Bootstrap
-	//wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/assets/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css' );
-
-	//wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/assets/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js', array( 'jquery' ) );
-
-	wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css');
-	wp_enqueue_script('bootstrap-script', get_template_directory_uri() . '/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js', array('jquery'));
-
+	wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/assets/bootstrap-5.1.3-dist/css/bootstrap.min.css');
+	wp_enqueue_script('bootstrap-script', get_template_directory_uri() . '/assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js');
 
 	//Add Fonts
-	//wp_enqueue_style( 'fonts-google', get_stylesheet_directory_uri().'/style_fonts.css' );
 	wp_enqueue_style('fonts-google', get_template_directory_uri() . '/style_fonts.css');
 
 	//Add Base Style
@@ -359,6 +346,20 @@ function workweb_base_mainstyle()
 	wp_enqueue_style('workweb_base-child-style', get_stylesheet_uri(), array('bootstrap-style', 'fonts-google', 'base-style'), $GLOBALS['wwbVars']['stylecache']);
 }
 add_action('wp_enqueue_scripts', 'workweb_base_mainstyle');
+
+/***
+ * Set site icon.  It's located in Theme area
+ */
+add_action('wp_head',    'wpse_default_site_icon', 99);
+add_action('login_head', 'wpse_default_site_icon', 99);
+
+function wpse_default_site_icon()
+{
+	if (!has_site_icon()  && !is_customize_preview()) {
+
+		echo '<link rel="shortcut icon" href="/wp-content/themes/workweb_base/favicon.ico" />';
+	}
+}
 
 
 /**
@@ -474,7 +475,8 @@ if (!function_exists('workweb_base_primary_class')) {
 
 if (!function_exists('workweb_base_main_class')) {
 	function workweb_base_main_class()
-	{ }
+	{
+	}
 }
 
 
