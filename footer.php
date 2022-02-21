@@ -12,7 +12,7 @@
 
 
 ?>
-</div> <!-- END site-content row  FROM HEADER -->
+</div><!-- END site-content row  FROM HEADER -->
 <footer id="footer-widgets" class="site-footer row mt-auto" role="contentinfo">
 	<?php get_template_part('components/footer/site'); ?>
 </footer>
