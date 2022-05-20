@@ -25,6 +25,15 @@ Base theme for Working Websites sites.
 
 == Changelog ==
 
+= 1.2.3 - 2020-05-20 =
+Making it compatable with WP 5.9.  Addresses issues in Theme Check
+Known Issues:
+- Slider doesn't work.  Needs to be updated to Bootstrap 5.x version
+- There is a hard coded icon
+- No blocks are used (yet)
+- A menu has no location
+- There are 'featured page' and 'featured pageS'.  Confusing, but will be addressed.
+
 = 1.0 - 2017-05-16 =
 Various Update.
 
