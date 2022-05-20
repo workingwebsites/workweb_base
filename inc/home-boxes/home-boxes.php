@@ -65,7 +65,6 @@ function wws_customize_register_homebox($wp_customize)
 				'capability'    => 'edit_theme_options',
 				'type'          => 'theme_mod',
 				'sanitize_callback' => 'wws_sanitize_img_url',
-
 			)
 		);
 		//Add to customizer
@@ -73,7 +72,8 @@ function wws_customize_register_homebox($wp_customize)
 			$wp_customize,
 			'image_upload_wws_' . $i,
 			array(
-				'label'    => __('----- Home Box ' . $hb_text . ' -----', 'mappins'),
+				//'label'    => __('----- Home Box ' . $hb_text . ' -----', 'workweb_base'),
+				'label'    => '----- ' . __('Home Box', 'workweb_base')  . $hb_text . ' -----',
 				'section'  => 'static_front_page',
 				'settings' => 'wws_options[homebox][' . $i . '][image]',
 			)
@@ -84,11 +84,10 @@ function wws_customize_register_homebox($wp_customize)
 		$wp_customize->add_setting(
 			'wws_options[homebox][' . $i . '][title]',
 			array(
-				'default'       => NULL, //'image.jpg',
+				'default'       => NULL,
 				'capability'    => 'edit_theme_options',
 				'type'          => 'theme_mod',
 				'sanitize_callback' => 'wws_sanitize_text',
-
 			)
 		);
 		//Add to customizer
@@ -96,7 +95,7 @@ function wws_customize_register_homebox($wp_customize)
 			$wp_customize,
 			'homebox_' . $i . '_title',
 			array(
-				'label'    => __('Title:', 'mappins'),
+				'label'    => __('Title:', 'workweb_base'),
 				'section'  => 'static_front_page',
 				'settings' => 'wws_options[homebox][' . $i . '][title]',
 				'type'     => 'text',
@@ -109,11 +108,10 @@ function wws_customize_register_homebox($wp_customize)
 		$wp_customize->add_setting(
 			'wws_options[homebox][' . $i . '][content]',
 			array(
-				'default'       => NULL, //'image.jpg',
+				'default'       => NULL,
 				'capability'    => 'edit_theme_options',
 				'type'          => 'theme_mod',
-				//'sanitize_callback' => 'wws_sanitize_textarea',
-
+				'sanitize_callback' => 'sanitize_textarea_field',
 			)
 		);
 		//Add to customizer
@@ -121,7 +119,7 @@ function wws_customize_register_homebox($wp_customize)
 			$wp_customize,
 			'homebox_' . $i . '_content',
 			array(
-				'label'    => __('Content:', 'mappins'),
+				'label'    => __('Content:', 'workweb_base'),
 				'section'  => 'static_front_page',
 				'settings' => 'wws_options[homebox][' . $i . '][content]',
 				'type'     => 'textarea',
@@ -137,8 +135,7 @@ function wws_customize_register_homebox($wp_customize)
 				'default'       => NULL,
 				'capability'    => 'edit_theme_options',
 				'type'          => 'theme_mod',
-				//'sanitize_callback' => 'wws_sanitize_text',
-
+				'sanitize_callback' => 'wws_sanitize_text',
 			)
 		);
 		//Add to customizer
@@ -146,17 +143,15 @@ function wws_customize_register_homebox($wp_customize)
 			$wp_customize,
 			'homebox_' . $i . '_link',
 			array(
-				'label'    => __('Read More link to:', 'mappins'),
+				'label'    => __('Read More link to:', 'workweb_base'),
 				'section'  => 'static_front_page',
 				'settings' => 'wws_options[homebox][' . $i . '][link]',
 				'type'    => 'dropdown-pages',
 				'allow_addition' => true,
 			)
 		));
-	}	// end for num slides
-
-
-}	// end function
+	}
+}
 
 add_action('customize_register', 'wws_customize_register_homebox');
 

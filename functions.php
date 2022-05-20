@@ -8,6 +8,7 @@
  * @package workweb_base
  */
 
+
 /**
  * SET FEATURES.
  * Set what features will appear (mostly on front page).
@@ -137,6 +138,15 @@ if (!function_exists('workweb_base_setup')) :
 
 		// Set refresh widgets in customizer
 		add_theme_support('customize-selective-refresh-widgets');
+
+		//Support blocks
+		add_theme_support("wp-block-styles");
+
+		//Support responsive embeds
+		add_theme_support("responsive-embeds");
+
+		//Support wide align
+		add_theme_support("align-wide");
 	}
 endif;
 add_action('after_setup_theme', 'workweb_base_setup', 5);
@@ -149,8 +159,8 @@ if (!function_exists('wws_register_menus')) {
 	{
 		register_nav_menus(
 			array(
-				'short-top-menu' => __('Short Top Menu'),
-				'full-top-menu' => __('Full Top Menu')
+				'short-top-menu' => __('Short Top Menu', 'workweb_base'),
+				'full-top-menu' => __('Full Top Menu', 'workweb_base')
 			)
 		);
 	}

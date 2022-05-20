@@ -11,7 +11,7 @@ function wws_featuredpages_func($wp_customize)
 
 
     $wp_customize->add_section('wws_featuredpages', array(
-        'title' => __('Featured Pages', 'wws_featuredpages'),
+        'title' => __('Featured Pages', 'workweb_base'),
         'description' => 'Select featured pages to appear on front page',
         'priority' => 125,
     ));
@@ -20,13 +20,14 @@ function wws_featuredpages_func($wp_customize)
         $wp_customize->add_setting('wws_options[featured_pages][' . $i . ']', array(
             'capability' => 'edit_theme_options',
             'type' => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field',
         ));
 
         $wp_customize->add_control(new WP_Customize_Control(
             $wp_customize,
             'featuredpages_' . $i,
             array(
-                'label' => __('Select Featured Page ID ' . $i, 'wws_featuredpages'),
+                'label' => __('Select Featured Page ID ', 'workweb_base')  . $i,
                 'section' => 'wws_featuredpages',
                 'type' => 'dropdown-pages',
                 'allow_addition' => true,
@@ -44,16 +45,6 @@ add_action('customize_register', 'wws_featuredpages_func');
 
 function wwws_featuredpages_customize_register(WP_Customize_Manager $wp_customize)
 {
-    /*
-    $wp_customize->selective_refresh->add_partial(
-        'wws_options[featured_pages]', // settings name
-        array(
-            'selector' => '#div_featuredpages',    // where it is on the screen
-            'render_callback' => function () {
-            },
-        )
-    );
-    */
     global $NumPages;
 
     for ($i = 0; $i < $NumPages; $i++) {

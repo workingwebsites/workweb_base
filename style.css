@@ -1,10 +1,12 @@
 /*
 Theme Name: workweb_base
-Theme URI: http://components.underscores.me/
+Theme URI: https://github.com/workingwebsites/workweb_base
 Author: Working Websites
 Author URI: http://workingwebsites.ca
+Tested up to: 5.9
+Requires PHP: 7.4
 Description: Base theme for websites site
-Version:  v1.2.2
+Version:  v1.2.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: workweb_base
@@ -25,7 +27,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 */
 
-
 /*
 Base styles for theme workweb_base
 
@@ -42,11 +43,9 @@ Base styles for theme workweb_base
 
 --------------------------------------------------------------*/
 
-
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-
 
 body,
 button,
@@ -63,4 +62,3 @@ textarea {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-
