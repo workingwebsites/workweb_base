@@ -25,7 +25,7 @@ Base theme for Working Websites sites.
 
 == Changelog ==
 
-= 1.2.3 - 2020-05-20 =
+= 1.2.4 - 2022-05-20 =
 Making it compatable with WP 5.9.  Addresses issues in Theme Check
 Known Issues:
 - Slider doesn't work.  Needs to be updated to Bootstrap 5.x version
