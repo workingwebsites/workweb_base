@@ -111,7 +111,7 @@ function wws_customize_register_homebox($wp_customize)
 				'default'       => NULL,
 				'capability'    => 'edit_theme_options',
 				'type'          => 'theme_mod',
-				'sanitize_callback' => 'none',
+				'sanitize_callback' => 'sanitize_textarea_field',
 			)
 		);
 		//Add to customizer
@@ -135,7 +135,7 @@ function wws_customize_register_homebox($wp_customize)
 				'default'       => NULL,
 				'capability'    => 'edit_theme_options',
 				'type'          => 'theme_mod',
-				'sanitize_callback' => 'none',
+				'sanitize_callback' => 'wws_sanitize_text',
 			)
 		);
 		//Add to customizer

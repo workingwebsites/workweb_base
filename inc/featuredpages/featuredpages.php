@@ -20,7 +20,7 @@ function wws_featuredpages_func($wp_customize)
         $wp_customize->add_setting('wws_options[featured_pages][' . $i . ']', array(
             'capability' => 'edit_theme_options',
             'type' => 'theme_mod',
-            'sanitize_callback' => 'none',
+            'sanitize_callback' => 'sanitize_text_field',
         ));
 
         $wp_customize->add_control(new WP_Customize_Control(

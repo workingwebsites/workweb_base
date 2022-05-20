@@ -33,7 +33,7 @@ function wws_contactpage_func($wp_customize)
     $wp_customize->add_setting('wws_options[contact_page]', array(
         'capability'     => 'edit_theme_options',
         'type'          => 'theme_mod',
-        'sanitize_callback' => 'none',
+        'sanitize_callback' => 'wws_sanitize_text',
     ));
 
     $wp_customize->add_control('wws_contact_page_select', array(
