@@ -1,6 +1,6 @@
 <?php
 /*
-	* Set arguements for menus
+	* Set arguments for menus
 	*/
 $arg_short = array(
 	'theme_location' => 'short-top-menu',
