@@ -35,8 +35,7 @@ function wws_get_sliders($return_url = false)
 			$slider['link'] = empty($slider['link']) ? NULL : get_permalink($slider['link']);
 
 			$ar_results[] = $slider;
-		}	// end foreach
-
+		}
 	} else {
 
 		$ar_results[] = NULL;

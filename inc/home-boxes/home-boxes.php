@@ -154,10 +154,8 @@ function wws_customize_register_homebox($wp_customize)
 				'allow_addition' => true,
 			)
 		));
-	}	// end for num slides
-
-
-}	// end function
+	}
+}
 
 add_action('customize_register', 'wws_customize_register_homebox');
 
