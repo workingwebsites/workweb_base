@@ -12,6 +12,7 @@ function wws_featuredpage_func($wp_customize)
     $wp_customize->add_setting('wws_options[featured_page]', array(
         'capability'     => 'edit_theme_options',
         'type'          => 'theme_mod',
+        'sanitize_callback' => 'none',
     ));
 
     $wp_customize->add_control('wws_featured_page_select', array(

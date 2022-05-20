@@ -122,7 +122,7 @@ function wws_portfoliopage_func($wp_customize)
   $wp_customize->add_setting('wws_options[portfolio_page]', array(
     'capability'     => 'edit_theme_options',
     'type'          => 'theme_mod',
-
+    'sanitize_callback' => 'none',
   ));
 
   $wp_customize->add_control('wws_portfolio_page_select', array(

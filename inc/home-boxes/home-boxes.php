@@ -65,7 +65,6 @@ function wws_customize_register_homebox($wp_customize)
 				'capability'    => 'edit_theme_options',
 				'type'          => 'theme_mod',
 				'sanitize_callback' => 'wws_sanitize_img_url',
-
 			)
 		);
 		//Add to customizer
@@ -89,7 +88,6 @@ function wws_customize_register_homebox($wp_customize)
 				'capability'    => 'edit_theme_options',
 				'type'          => 'theme_mod',
 				'sanitize_callback' => 'wws_sanitize_text',
-
 			)
 		);
 		//Add to customizer
@@ -113,8 +111,7 @@ function wws_customize_register_homebox($wp_customize)
 				'default'       => NULL,
 				'capability'    => 'edit_theme_options',
 				'type'          => 'theme_mod',
-				//'sanitize_callback' => 'wws_sanitize_textarea',
-
+				'sanitize_callback' => 'none',
 			)
 		);
 		//Add to customizer
@@ -138,8 +135,7 @@ function wws_customize_register_homebox($wp_customize)
 				'default'       => NULL,
 				'capability'    => 'edit_theme_options',
 				'type'          => 'theme_mod',
-				//'sanitize_callback' => 'wws_sanitize_text',
-
+				'sanitize_callback' => 'none',
 			)
 		);
 		//Add to customizer
