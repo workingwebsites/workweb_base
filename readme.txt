@@ -29,6 +29,7 @@ Base theme for Working Websites sites.
 Making it compatable with WP 5.9.  Addresses issues in Theme Check
 Known Issues:
 - Slider doesn't work.  Needs to be updated to Bootstrap 5.x version
+- Theme Check says inc items should be plugins.  That's not how this works, so not happening.
 - There is a hard coded icon
 - No blocks are used (yet)
 - A menu has no location
