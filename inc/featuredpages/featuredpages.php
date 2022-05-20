@@ -27,7 +27,7 @@ function wws_featuredpages_func($wp_customize)
             $wp_customize,
             'featuredpages_' . $i,
             array(
-                'label' => __('Select Featured Page ID ' . $i, 'workweb_base'),
+                'label' => __('Select Featured Page ID ', 'workweb_base')  . $i,
                 'section' => 'wws_featuredpages',
                 'type' => 'dropdown-pages',
                 'allow_addition' => true,
@@ -45,16 +45,6 @@ add_action('customize_register', 'wws_featuredpages_func');
 
 function wwws_featuredpages_customize_register(WP_Customize_Manager $wp_customize)
 {
-    /*
-    $wp_customize->selective_refresh->add_partial(
-        'wws_options[featured_pages]', // settings name
-        array(
-            'selector' => '#div_featuredpages',    // where it is on the screen
-            'render_callback' => function () {
-            },
-        )
-    );
-    */
     global $NumPages;
 
     for ($i = 0; $i < $NumPages; $i++) {
