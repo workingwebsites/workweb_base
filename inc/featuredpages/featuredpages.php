@@ -11,7 +11,7 @@ function wws_featuredpages_func($wp_customize)
 
 
     $wp_customize->add_section('wws_featuredpages', array(
-        'title' => __('Featured Pages', 'wws_featuredpages'),
+        'title' => __('Featured Pages', 'workweb_base'),
         'description' => 'Select featured pages to appear on front page',
         'priority' => 125,
     ));
@@ -26,7 +26,7 @@ function wws_featuredpages_func($wp_customize)
             $wp_customize,
             'featuredpages_' . $i,
             array(
-                'label' => __('Select Featured Page ID ' . $i, 'wws_featuredpages'),
+                'label' => __('Select Featured Page ID ' . $i, 'workweb_base'),
                 'section' => 'wws_featuredpages',
                 'type' => 'dropdown-pages',
                 'allow_addition' => true,

@@ -200,7 +200,7 @@ function custom_breadcrumbs($nav_class = 'col-12')
         } else if (get_query_var('paged')) {
 
             // Paginated archives
-            echo '<li class="breadcrumb-item item-current item-current-' . get_query_var('paged') . '">' . __('Page') . ' ' . get_query_var('paged') . '</li>';
+            echo '<li class="breadcrumb-item item-current item-current-' . get_query_var('paged') . '">' . __('Page', 'workweb_base') . ' ' . get_query_var('paged') . '</li>';
         } else if (is_search()) {
 
             // Search results page

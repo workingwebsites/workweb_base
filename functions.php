@@ -149,8 +149,8 @@ if (!function_exists('wws_register_menus')) {
 	{
 		register_nav_menus(
 			array(
-				'short-top-menu' => __('Short Top Menu'),
-				'full-top-menu' => __('Full Top Menu')
+				'short-top-menu' => __('Short Top Menu', 'workweb_base'),
+				'full-top-menu' => __('Full Top Menu', 'workweb_base')
 			)
 		);
 	}

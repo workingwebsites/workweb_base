@@ -20,7 +20,7 @@ add_shortcode( 'contactmodal', 'wws_contactmodal_func' );
 function wws_contactpage_func($wp_customize){
 
 	$wp_customize->add_section('wws_contactmodal', array(
-        'title'    => __('Contact Pop Up', 'wws_contactmodal'),
+        'title'    => __('Contact Pop Up', 'workweb_base'),
         'description' => 'Select contact page to appear on pop-up.',
         'priority' => 120,
     ));
@@ -32,7 +32,7 @@ function wws_contactpage_func($wp_customize){
     ));
 
     $wp_customize->add_control('wws_contact_page_select', array(
-        'label'      => __('Select the Contact Page', 'wws_contactmodal'),
+        'label'      => __('Select the Contact Page', 'workweb_base'),
         'section'    => 'wws_contactmodal',
         'type'    => 'dropdown-pages',
         'settings'   => 'wws_options[contact_page]',
@@ -68,5 +68,3 @@ function wws_get_contactpage(){
 		return NULL;
 	}
 }
-
-?>
