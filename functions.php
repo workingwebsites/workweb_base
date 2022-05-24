@@ -159,8 +159,7 @@ if (!function_exists('wws_register_menus')) {
 	{
 		register_nav_menus(
 			array(
-				'short-top-menu' => __('Short Top Menu', 'workweb_base'),
-				'full-top-menu' => __('Full Top Menu', 'workweb_base')
+				'top-menu' => __('Top Menu', 'workweb_base')
 			)
 		);
 	}
@@ -171,11 +170,9 @@ add_action('init', 'wws_register_menus');
  * Add bootstrap classes to menu items
  */
 function wws_bootstrap_navitem_class($classes, $item, $args)
-{
-	if ('short-top-menu' === $args->theme_location) {
-		$str_current = empty($item->current) ? NULL : ' active';
-		$classes[] = 'nav-item' . $str_current;
-	}
+{	//Adds 'active' if current page
+	$str_current = empty($item->current) ? NULL : ' active';
+	$classes[] = 'nav-item' . $str_current;
 
 	return $classes;
 }
@@ -183,33 +180,77 @@ function wws_bootstrap_navitem_class($classes, $item, $args)
 add_filter('nav_menu_css_class', 'wws_bootstrap_navitem_class', 10, 4);
 
 /**
+ * Checks if there's a sub menu
+ */
+
+function has_sub_menu(string $menu_location, int $id)
+{
+	//Get proper menu
+	$menuLocations = get_nav_menu_locations();
+	$menuID = $menuLocations[$menu_location];
+	$menu_items = wp_get_nav_menu_items($menuID);
+
+	//Go through and see if this is a parent
+	foreach ($menu_items as $menu_item) {
+		if ((int)$menu_item->menu_item_parent === $id) {
+			return true;
+		}
+	}
+	return false;
+}
+
+
+/**
  * Add bootstrap classes to menu links
  */
-function add_specific_menu_location_atts($atts, $item, $args)
+function menu_set_link_att($atts, $item, $args)
 {
-	if ('short-top-menu' === $args->theme_location) {
-		$atts['class'] = 'nav-link';
+	//If parent item
+	$is_parent = has_sub_menu('top-menu', $item->ID);
+	if ($is_parent) {
+		//Add class
+		$class = 'dropdown-toggle';
+		$atts['class'] = $class;
+
+		//Add data
+		$data = "dropdown";
+		$atts['data-bs-toggle'] = $data;
 	}
+
+	//Return changes
 	return $atts;
 }
-add_filter('nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3);
+add_filter('nav_menu_link_attributes', 'menu_set_link_att', 10, 3);
 
 
 /**
- * Add 'More' item to short menu
+ * Adds bootstrap 'dropdown' class to menu items with children
+ * nav-link dropdown-toggle
  */
-function add_last_nav_item($items, $args)
+function menu_set_dropdown($sorted_menu_items, $args)
 {
-	if ($args->theme_location == 'short-top-menu') {
-		$items .= '<li id="menu-item-more" class="menu-item nav-item"><a href="#" class="more-link collapsed nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">' . $GLOBALS['wwbVars']['more'] . '</a></li>';
+	$last_top = 0;
+	foreach ($sorted_menu_items as $key => $obj) {
+		// it is a top lv item?
+		if (0 == $obj->menu_item_parent) {
+			// set the key of the parent
+			$last_top = $key;
+		} else {
+			$sorted_menu_items[$last_top]->classes['dropdown'] = 'dropdown';
+		}
 	}
-	return $items;
+	return $sorted_menu_items;
 }
+add_filter('wp_nav_menu_objects', 'menu_set_dropdown', 10, 2);
 
-/**
- * Uncomment to add
- */
-//add_filter('wp_nav_menu_items', 'add_last_nav_item', 10, 2);
+
+function menu_set_submenu_class($classes)
+{
+	$classes[] = 'dropdown-menu';
+	return $classes;
+}
+add_filter('nav_menu_submenu_css_class', 'menu_set_submenu_class');
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
