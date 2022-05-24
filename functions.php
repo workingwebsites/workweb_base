@@ -181,6 +181,27 @@ function wws_bootstrap_navitem_class($classes, $item, $args)
 add_filter('nav_menu_css_class', 'wws_bootstrap_navitem_class', 10, 4);
 
 /**
+ * Checks if there's a sub menu
+ */
+
+function has_sub_menu(string $menu_location, int $id)
+{
+	//Get proper menu
+	$menuLocations = get_nav_menu_locations();
+	$menuID = $menuLocations[$menu_location];
+	$menu_items = wp_get_nav_menu_items($menuID);
+
+	//Go through and see if this is a parent
+	foreach ($menu_items as $menu_item) {
+		if ((int)$menu_item->menu_item_parent === $id) {
+			return true;
+		}
+	}
+	return false;
+}
+
+
+/**
  * Add bootstrap classes to menu links
  */
 function add_specific_menu_location_atts($atts, $item, $args)
@@ -188,13 +209,26 @@ function add_specific_menu_location_atts($atts, $item, $args)
 	if ('short-top-menu' === $args->theme_location) {
 		$atts['class'] = 'nav-link';
 	}
+
+	//If parent item
+	$is_parent = has_sub_menu('full-top-menu', $item->ID);
+	if ($is_parent) {
+		$class         = 'dropdown-toggle';
+		$atts['class'] = $class;
+	}
+
+	//Return changes
 	return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3);
 
 
+
+
+
 /**
  * Adds 'dropdown' class to menu items with children
+ * nav-link dropdown-toggle
  */
 function menu_set_dropdown($sorted_menu_items, $args)
 {
