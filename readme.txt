@@ -25,6 +25,17 @@ Base theme for Working Websites sites.
 
 == Changelog ==
 
+= 1.2.5 - 2022-05-24 =
+Only one menu now (top menu).  Fully Bootstrap menu.  Short menu removed
+Known Issues:
+- Can't click on link on top menu with sub menu.  Work around:  Use a custom link with # for 'title'.  All items should be in the sub menuy
+- Slider doesn't work.  Needs to be updated to Bootstrap 5.x version
+- Theme Check says inc items should be plugins.  That's not how this works, so not happening.
+- There is a hard coded icon
+- No blocks are used (yet)
+- There are 'featured page' and 'featured pageS'.  Confusing, but will be addressed.
+
+
 = 1.2.4 - 2022-05-20 =
 Making it compatable with WP 5.9.  Addresses issues in Theme Check
 Known Issues:
