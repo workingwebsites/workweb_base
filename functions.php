@@ -159,7 +159,7 @@ if (!function_exists('wws_register_menus')) {
 	{
 		register_nav_menus(
 			array(
-				'full-top-menu' => __('Top Menu', 'workweb_base')
+				'top-menu' => __('Top Menu', 'workweb_base')
 			)
 		);
 	}
@@ -206,7 +206,7 @@ function has_sub_menu(string $menu_location, int $id)
 function menu_set_link_att($atts, $item, $args)
 {
 	//If parent item
-	$is_parent = has_sub_menu('full-top-menu', $item->ID);
+	$is_parent = has_sub_menu('top-menu', $item->ID);
 	if ($is_parent) {
 		//Add class
 		$class = 'dropdown-toggle';
@@ -224,7 +224,7 @@ add_filter('nav_menu_link_attributes', 'menu_set_link_att', 10, 3);
 
 
 /**
- * Adds 'dropdown' class to menu items with children
+ * Adds bootstrap 'dropdown' class to menu items with children
  * nav-link dropdown-toggle
  */
 function menu_set_dropdown($sorted_menu_items, $args)

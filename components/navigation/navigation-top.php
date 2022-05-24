@@ -5,7 +5,7 @@
  */
 
 $arg_full = array(
-	'theme_location' => 'full-top-menu',
+	'theme_location' => 'top-menu',
 	'depth' => 2,
 	'menu_class' => "navbar-nav collapse navbar-collapse",
 	'container' => 'div',
