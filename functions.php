@@ -204,7 +204,7 @@ function has_sub_menu(string $menu_location, int $id)
 /**
  * Add bootstrap classes to menu links
  */
-function add_specific_menu_location_atts($atts, $item, $args)
+function menu_set_link_att($atts, $item, $args)
 {
 	if ('short-top-menu' === $args->theme_location) {
 		$atts['class'] = 'nav-link';
@@ -213,17 +213,19 @@ function add_specific_menu_location_atts($atts, $item, $args)
 	//If parent item
 	$is_parent = has_sub_menu('full-top-menu', $item->ID);
 	if ($is_parent) {
-		$class         = 'dropdown-toggle';
+		//Add class
+		$class = 'dropdown-toggle';
 		$atts['class'] = $class;
+
+		//Add data
+		$data = "dropdown";
+		$atts['data-bs-toggle'] = $data;
 	}
 
 	//Return changes
 	return $atts;
 }
-add_filter('nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3);
-
-
-
+add_filter('nav_menu_link_attributes', 'menu_set_link_att', 10, 3);
 
 
 /**
@@ -245,6 +247,14 @@ function menu_set_dropdown($sorted_menu_items, $args)
 	return $sorted_menu_items;
 }
 add_filter('wp_nav_menu_objects', 'menu_set_dropdown', 10, 2);
+
+
+function menu_set_submenu_class($classes)
+{
+	$classes[] = 'dropdown-menu';
+	return $classes;
+}
+add_filter('nav_menu_submenu_css_class', 'menu_set_submenu_class');
 
 
 /**
