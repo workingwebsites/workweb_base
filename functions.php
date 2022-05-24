@@ -171,11 +171,9 @@ add_action('init', 'wws_register_menus');
  * Add bootstrap classes to menu items
  */
 function wws_bootstrap_navitem_class($classes, $item, $args)
-{
-	if ('short-top-menu' === $args->theme_location) {
-		$str_current = empty($item->current) ? NULL : ' active';
-		$classes[] = 'nav-item' . $str_current;
-	}
+{	//Adds 'active' if current page
+	$str_current = empty($item->current) ? NULL : ' active';
+	$classes[] = 'nav-item' . $str_current;
 
 	return $classes;
 }
@@ -193,6 +191,26 @@ function add_specific_menu_location_atts($atts, $item, $args)
 	return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3);
+
+
+/**
+ * Adds 'dropdown' class to menu items with children
+ */
+function menu_set_dropdown($sorted_menu_items, $args)
+{
+	$last_top = 0;
+	foreach ($sorted_menu_items as $key => $obj) {
+		// it is a top lv item?
+		if (0 == $obj->menu_item_parent) {
+			// set the key of the parent
+			$last_top = $key;
+		} else {
+			$sorted_menu_items[$last_top]->classes['dropdown'] = 'dropdown';
+		}
+	}
+	return $sorted_menu_items;
+}
+add_filter('wp_nav_menu_objects', 'menu_set_dropdown', 10, 2);
 
 
 /**
