@@ -159,8 +159,7 @@ if (!function_exists('wws_register_menus')) {
 	{
 		register_nav_menus(
 			array(
-				'short-top-menu' => __('Short Top Menu', 'workweb_base'),
-				'full-top-menu' => __('Full Top Menu', 'workweb_base')
+				'full-top-menu' => __('Top Menu', 'workweb_base')
 			)
 		);
 	}
@@ -206,10 +205,6 @@ function has_sub_menu(string $menu_location, int $id)
  */
 function menu_set_link_att($atts, $item, $args)
 {
-	if ('short-top-menu' === $args->theme_location) {
-		$atts['class'] = 'nav-link';
-	}
-
 	//If parent item
 	$is_parent = has_sub_menu('full-top-menu', $item->ID);
 	if ($is_parent) {
@@ -256,22 +251,6 @@ function menu_set_submenu_class($classes)
 }
 add_filter('nav_menu_submenu_css_class', 'menu_set_submenu_class');
 
-
-/**
- * Add 'More' item to short menu
- */
-function add_last_nav_item($items, $args)
-{
-	if ($args->theme_location == 'short-top-menu') {
-		$items .= '<li id="menu-item-more" class="menu-item nav-item"><a href="#" class="more-link collapsed nav-link" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">' . $GLOBALS['wwbVars']['more'] . '</a></li>';
-	}
-	return $items;
-}
-
-/**
- * Uncomment to add
- */
-//add_filter('wp_nav_menu_items', 'add_last_nav_item', 10, 2);
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
