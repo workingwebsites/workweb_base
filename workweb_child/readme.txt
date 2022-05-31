@@ -13,3 +13,8 @@ Now you can select the theme and tinker with it.
 For more details:
 
 https://developer.wordpress.org/themes/advanced-topics/child-themes/
+
+** KNOWN ISSUES **
+If you run the theme checker on this, it will come up with the same issues outlined in the parent theme.  See the README file for that.
+Also, it doesn't seem to pick up on some settings in the parent that should be in the child.  Ex: add_theme_support etc.
+Doesn't seem to be a real problem.
