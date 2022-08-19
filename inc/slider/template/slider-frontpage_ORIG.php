@@ -7,36 +7,6 @@
 $ar_slider = wws_get_sliders(true);
 
 ?>
-
-<!-- 
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="..." alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div> 
--->
-
 <div id="wwsCarouselSlider" class="carousel slide row" data-ride="carousel">
 	<ol class="carousel-indicators">
 		<li data-target="#wwsCarouselSlider" data-slide-to="0" class="active"></li>
@@ -57,11 +27,8 @@ $ar_slider = wws_get_sliders(true);
 			$content = isset($slider['content']) ? wpautop($slider['content']) : NULL;
 			$link = isset($slider['link']) ? '<a href="' . $slider['link'] . '" class="slider_link_a btn btn-sm portfolio_but"">More</a>' : NULL;
 		?>
-			<div class="carousel-item <?php echo $item_active ?>">
-				<img class="d-block w-100" src="<?php echo $image ?>" alt="First slide">
-			</div>
 
-			<!-- <div class="carousel-item <?php echo $item_active ?> sliderrow align-items-end" style="background-image:url('<?php echo $image ?>');">
+			<div class="carousel-item <?php echo $item_active ?> sliderrow align-items-end" style="background-image:url('<?php echo $image ?>');">
 				<div class="slider_container col-sm-12 offset-md-6 col-md-6 ">
 					<div class="slider">
 						<h2 class="slider_title"><?php echo  $title ?></h2>
@@ -83,7 +50,7 @@ $ar_slider = wws_get_sliders(true);
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
-			</div> -->
+			</div>
 		<?php } ?>
 	</div>
 </div>
