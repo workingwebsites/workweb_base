@@ -2,6 +2,7 @@
 
 /**
  *  Slider / carousel
+ * Displays slides from 'slider' control.
  */
 
 $ar_slider = wws_get_sliders(true);
@@ -9,11 +10,20 @@ $ar_slider = wws_get_sliders(true);
 ?>
 
 <div id="wwsCarouselSlider" class="carousel slide" data-bs-ride="carousel">
+
 	<div class="carousel-indicators">
-		<button type="button" data-bs-target="#wwsCarouselSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-		<button type="button" data-bs-target="#wwsCarouselSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
-		<button type="button" data-bs-target="#wwsCarouselSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		<?php
+		for ($i = 0; $i < count($ar_slider); $i++) {
+			if ($i == 0) {	// The first one is active
+				$strParam = 'class="active" aria-current="true" ';
+			} else {
+				$strParam = null;
+			}
+		?>
+			<button type="button" data-bs-target="#wwsCarouselSlider" data-bs-slide-to="<?php echo $i ?>" <?php echo $strParam ?> aria-label="Slide <?php echo $i + 1 ?>"></button>
+		<?php } ?>
 	</div>
+
 	<div class="carousel-inner">
 		<?php
 		$i = -1;
