@@ -14,9 +14,6 @@ function wws_get_sliders($return_url = false)
 
 	$ar_results = array();
 
-	//Bail if nothing
-	//if
-
 	//Parse each box
 	if (!empty($ar_theme_ops['slider'])) {
 		foreach ($ar_theme_ops['slider'] as $slider) {
