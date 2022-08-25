@@ -37,6 +37,9 @@ function setwwbFeatures()
 
     //Latest Post settings: How many boxes?
     $GLOBALS['wwbVars']['latestposts_num'] = 1;
+
+    //How mny sliders?
+    $GLOBALS['wwbVars']['slider_num'] = 3;
 }
 setwwbFeatures();
 

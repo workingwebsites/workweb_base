@@ -1,4 +1,8 @@
 <?php
+/**
+ * Sets number of boxes for screen
+ */
+$NumSliders = $GLOBALS['wwbVars']['slider_num'];
 
 /**
  * Returns array of sliders
@@ -44,14 +48,6 @@ function wws_get_sliders($return_url = false)
 
 	return $ar_results;
 }
-
-
-
-/**
- * Sets number of boxes for screen
- */
-$NumSliders = 3;
-
 
 
 function wws_customize_register_slider($wp_customize)
