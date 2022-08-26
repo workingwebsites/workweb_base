@@ -27,7 +27,7 @@ function wws_featuredpages_func($wp_customize)
             $wp_customize,
             'featuredpages_' . $i,
             array(
-                'label' => __('Select Featured Page ID ', 'workweb_base')  . $i,
+                'label' => __('Select Featured Page ', 'workweb_base')  . $i,
                 'section' => 'wws_featuredpages',
                 'type' => 'dropdown-pages',
                 'allow_addition' => true,

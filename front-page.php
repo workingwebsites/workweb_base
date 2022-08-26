@@ -21,9 +21,9 @@ else :
 			get_template_part('inc/slider/template/slider', 'frontpage');
 		}
 		?>
-		<!-- HEADER IMAGE AND ABOUT US -->
+		<!-- HEADER IMAGE -->
 		<div id="fp_toprow" class="row">
-			<?php if ($GLOBALS['wwbFeatures']['portfolio'] == true) { ?>
+			<?php if ($GLOBALS['wwbFeatures']['header_image'] == true) { ?>
 				<div id="fp_toprow_image" class="col-md-12" style="background-image: url('<?php echo  get_header_image(); ?>')">
 				</div>
 			<?php } ?>

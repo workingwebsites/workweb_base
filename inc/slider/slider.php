@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Sets number of boxes for screen
  */
@@ -70,7 +71,6 @@ function wws_customize_register_slider($wp_customize)
 			$wp_customize,
 			'image_upload_wws_slider' . $i,
 			array(
-				//'label'    => __('----- Slider ' . $hb_text . ' -----', 'workweb_base'),
 				'label'    => '----- ' . __('Slider', 'workweb_base')  . $hb_text . ' -----',
 				'section'  => 'static_front_page',
 				'settings' => 'wws_options[slider][' . $i . '][image]',
@@ -154,24 +154,6 @@ function wws_customize_register_slider($wp_customize)
 add_action('customize_register', 'wws_customize_register_slider');
 
 
-/**
- * Functions to clean up text boxes
- */
-/*
-function wws_sanitize_text( $str_text ){
-	return sanitize_text_field( $str_text );
-}
-
-function wws_sanitize_textarea( $str_text ){
-	return sanitize_textarea_field( $str_text );
-}
-
-
-function wws_sanitize_img_url( $str_url ){
-	$id = attachment_url_to_postid( $str_url );
-	return $id;
-}
-*/
 
 /**
  * Make it editable in Customizer preview screen
