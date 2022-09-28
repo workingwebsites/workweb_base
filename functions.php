@@ -554,8 +554,11 @@ if (!function_exists('workweb_base_sidebar_class')) {
 if (!function_exists('category_id_class')) {
 	function category_id_class($arClasses)
 	{
-		$arClass[] = "col-md-12 ";
-
+		if (count($arClasses) == 0) {
+			$arClass[] = "col-md-12 ";
+		} else {
+			$arClass = $arClasses;
+		}
 		return $arClass;
 	}
 	add_filter('post_class', 'category_id_class');
