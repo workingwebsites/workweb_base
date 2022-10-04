@@ -88,7 +88,7 @@ function custom_breadcrumbs($nav_class = 'col-12')
                 $cat_name       = $taxonomy_terms[0]->name;
                 */
 
-                if (is_object($taxonomy_terms[0])) {
+                if ($taxonomy_terms && is_object($taxonomy_terms[0])) {
                     $cat_id         = $taxonomy_terms[0]->term_id;
                     $cat_nicename   = $taxonomy_terms[0]->slug ? $taxonomy_terms[0]->slug : NULL;
                     $cat_link       = get_term_link($taxonomy_terms[0]->term_id, $custom_taxonomy);
