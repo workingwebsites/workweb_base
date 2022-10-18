@@ -1,0 +1,12 @@
+# Modal Contact
+Pulls the contact page set in Customizer and displays it in a pop-up / modal on the screen.
+Anything on that page appears in the pop-up (Contact)
+
+The idea is to allow the webmaster to insert a contact us button anywhere on the site.
+
+## Short Code
+To activate the pop-up, add the following shortcode:
+[contactmodal title="Say Hello"]
+
+contactmodal = shortcode
+title = text on the button.  By default, it's the name of the page
