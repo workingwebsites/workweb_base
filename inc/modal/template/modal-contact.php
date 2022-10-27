@@ -12,7 +12,7 @@ if (empty($contact_post)) {
 ?>
 <!--  Contact Modal -->
 <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div id="contactModalDialog" class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="contactModalLabel"><?php echo $contact_post->post_title ?></h1>
