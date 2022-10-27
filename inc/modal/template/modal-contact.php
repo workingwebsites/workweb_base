@@ -18,7 +18,7 @@ if (empty($contact_post)) {
         <h1 class="modal-title fs-5" id="contactModalLabel"><?php echo $contact_post->post_title ?></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div id="contactModalBody" class="modal-body">
         <?php echo $content_string; ?>
       </div>
     </div>
